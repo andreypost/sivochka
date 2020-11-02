@@ -1,0 +1,37 @@
+$primary-color:#E5E5E5;
+$gilroy: 'Gilroy';
+// 30px, 20px, 18px, 16px, 14px
+// 300, normal, 600, bold
+$neumann: 'Neumann';
+// 110, 70
+// normal
+
+body {
+  background: $primary-color;
+  header {
+    nav {
+      font-family: $gilroy;
+    }
+    h1 {
+      font-size: 110px;
+    }
+    p {
+      font-size: 18px;
+      color: #8794B8;
+    }
+  }
+
+  section {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: $neumann;
+  }
+ 
+}
+.flexjustbet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
