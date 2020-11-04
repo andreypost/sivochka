@@ -1,37 +1,345 @@
-$primary-color:#E5E5E5;
-$gilroy: 'Gilroy';
+@font-face {
+  font-family: 'GilroyThin';
+  src        : url('../src/fonts/Gilroy-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'GilroyRegular';
+  src        : url('../src/fonts/Gilroy-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'GilroyBold';
+  src        : url('../src/fonts/Gilroy-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Neumann';
+  src        : url('../src/fonts/td-neumann.otf');
+}
+
+$bodyColor     :#E5E5E5;
+$hoverColor    :#E96C0E;
+$iconColor     :#8794B8;
+$mainColor     :#171E30;
+$gilroyThin    : 'GilroyThin';
+$gilroyRegular : 'GilroyRegular';
+$gilroyBold    : 'GilroyBold';
 // 30px, 20px, 18px, 16px, 14px
-// 300, normal, 600, bold
-$neumann: 'Neumann';
-// 110, 70
-// normal
+$neumann       : 'Neumann';
+
+h1,
+h2,
+ul,
+p,
+blockquote {
+  margin : 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+img {
+  height    : auto;
+  object-fit: contain;
+}
+
+::-webkit-scrollbar {
+  width : 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background   : #DADCDD
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow   : inset 0 0 6px rgba(0, 0, 0, .3);
+  background   : #CCCECF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+// body * { scrollbar-width: none; } /* Firefox */
+.none {
+  display: none;
+}
+
+.block,
+.baseheader__list {
+  display: block;
+}
+
+i,
+.inlineblock,
+::before,
+::after,
+footer nav a,
+.call__buttons {
+  display: inline-block;
+}
+
+header nav {
+  white-space: nowrap;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.flexcentbet {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+}
+
+.flexstartbase {
+  display        : flex;
+  justify-content: flex-start;
+  align-items    : baseline;
+}
+
+.flexstartbet {
+  display        : flex;
+  align-items    : flex-start;
+  justify-content: space-between;
+}
+
+.flexcenter {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+}
+
+.flexcentstart {
+  display        : flex;
+  align-items    : center;
+  justify-content: flex-start;
+}
+
+.flexcolcent {
+  display        : flex;
+  flex-flow      : column;
+  align-items    : center;
+  justify-content: center;
+}
+
+.flexwrap {
+  flex-wrap: wrap;
+}
+
+.relative {
+  position: relative;
+}
+
+.userselect {
+  user-select: none;
+}
+
+.pointer,
+button {
+  cursor: pointer;
+}
+
+svg {
+  fill: none;
+}
+
+.email,
+.call {
+  width       : 14px;
+  height      : 12px;
+  margin-right: 6px;
+}
+
+.insta,
+.facebook {
+  width      : 35px;
+  height     : 35px;
+  margin-left: 15px;
+  stroke     : white;
+  transition : stroke .2s;
+}
+
+.insta:hover,
+.facebook:hover {
+  stroke: $hoverColor;
+}
+
+header,
+footer {
+  font-family: $gilroyRegular;
+}
+
+nav {
+  color: $iconColor;
+}
+
+nav a,
+h1,
+footer {
+  color: white;
+}
+
+a:hover {
+  color: $hoverColor;
+}
+
 
 body {
-  background: $primary-color;
+  background: $bodyColor;
+
+  section {
+    max-width: 1170px;
+    margin   : 0 auto;
+    padding  : 0 20px;
+  }
+
+  button {
+    position        : absolute;
+    left            : 0;
+    top             : 0;
+    height          : 52px;
+    background-image: linear-gradient(270deg, #E9760C 4.09%, #E62B1F 100%);
+    box-shadow      : 0px 14px 6px rgba(21, 30, 53, 0.5);
+    border-radius   : 25px;
+    font-family     : $gilroyRegular;
+    color           : white;
+    transition      : opacity .2s ease-in-out;
+  }
+
+  button:nth-of-type(2) {
+    background: linear-gradient(270deg, #6583D5 4.09%, #1656E0 99.5%);
+    opacity   : 0;
+  }
+
+  button:nth-of-type(2):hover {
+    opacity: 1;
+  }
+
   header {
+    background     : url(../img/bg_header.png) center center no-repeat;
+    background-size: cover;
+
     nav {
-      font-family: $gilroy;
+      padding-top: 45px;
     }
+
+    blockquote {
+      color: $iconColor;
+    }
+
+    li:nth-child(-n+5)>a:link {
+      padding      : 12px 22px;
+      border       : 1px solid transparent;
+      border-radius: 25px;
+      transition   : all .2s ease-in-out;
+    }
+
+    li:nth-child(-n+5)>a:hover {
+      border-color: $hoverColor;
+    }
+
     h1 {
-      font-size: 110px;
+      margin-top : 140px;
+      font-family: $neumann;
+      font-size  : 110px;
     }
-    p {
-      font-size: 18px;
-      color: #8794B8;
+
+    blockquote {
+      max-width : 490px;
+      margin-top: 80px;
+      font-size : 18px;
+      font-style: italic;
+    }
+
+    blockquote:before {
+      content    : "\201C";
+      font-family: $neumann;
+      font-style : normal;
+      font-size  : 80px;
+      position   : absolute;
+      left       : -0;
+      top        : -45px;
+    }
+
+    .call__buttons {
+      margin-top   : 60px;
+      margin-bottom: 115px;
+    }
+
+    button {
+      width: 260px;
     }
   }
 
-  section {
-    max-width: 1140px;
-    margin: 0 auto;
+  main {
+    color: $mainColor;
+
+    h2 {
+      font-size: 70px;
+    }
   }
-  h1 {
-    font-family: $neumann;
+
+  footer {
+    background: #223A72;
+
   }
- 
 }
-.flexjustbet {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+#contactModal {
+  display   : none;
+  position  : fixed;
+  left      : 0;
+  top       : 0;
+  width     : 100%;
+  height    : 100%;
+  overflow  : auto;
+  background: rgba(0, 0, 0, 0.4);
+  z-index   : 9999;
+}
+
+#contactModal>div {
+  width     : 560px;
+  margin    : 5% auto;
+  background: var(--white);
+}
+
+.aboutcontainer {
+  background: linear-gradient(rgba(52, 52, 52, 0.19), rgba(52, 52, 52, 0.19)),
+    url(./img/marina-vitale-205339-unspl.png) center center no-repeat;
+  background-size: cover;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .none1024 {
+    display: none;
+  }
+
+  body header h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .column768 {
+    flex-flow: column;
+  }
 }

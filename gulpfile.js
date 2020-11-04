@@ -205,7 +205,6 @@ gulp.task("scripts", function () {
       "node_modules/jquery/dist/jquery.min.js",
       "node_modules/bootstrap/dist/js/bootstrap.min.js",
       "node_modules/slick-carousel/slick/slick.min.js",
-      "./src/js/masked-input.js",
       "node_modules/lightgallery.js/dist/js/lightgallery.min.js",
       "./src/js/common.min.js",
     ])
