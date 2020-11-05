@@ -32,6 +32,7 @@ $hoverColor     :#E96C0E;
 $iconColor      :#8794B8;
 $mainColor      :#171E30;
 $borderColor    : #D1D6E3;
+$lineColor      :#F0F3FA;
 $gilroyLight    : 'GilroyLight';
 $gilroyRegular  : 'GilroyRegular';
 $gilroyMedium   : 'GilroyMedium';
@@ -167,7 +168,7 @@ a:hover {
 }
 
 .flexbasestart,
-#about ul>li {
+.round__list>li {
   display        : flex;
   align-items    : baseline;
   justify-content: flex-start;
@@ -419,20 +420,31 @@ body {
 
     .career {
       padding   : 80px 0;
-      background: #F0F3FA;
+      background: $lineColor;
 
       img {
         margin-left : -35%;
         margin-right: 80px;
       }
 
-      img, h2, p {
+      img,
+      h2,
+      p {
         margin-bottom: 20px;
 
         span {
           font-weight: bold;
         }
       }
+    }
+
+    .services {
+      border-top: 2px solid $lineColor;
+
+      .section>div {
+        flex: 1;
+      }
+
     }
 
 
@@ -517,7 +529,7 @@ body {
   }
 
   h2 {
-    font-size: 40px;
+    font-size  : 40px;
     line-height: 48px;
   }
 
@@ -525,7 +537,8 @@ body {
     padding-top: 20px;
   }
 
-  blockquote, p,
+  blockquote,
+  p,
   body header blockquote {
     font-size  : 14px;
     line-height: 16px;
@@ -555,10 +568,10 @@ body {
   }
 
   body main .career img {
-    margin-left: -35%;
+    margin-left : -35%;
     margin-right: unset;
-    width: 100%;
-}
+    width       : 100%;
+  }
 
 }
 
