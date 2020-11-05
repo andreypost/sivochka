@@ -65,6 +65,10 @@ h2 {
   line-height: 80px;
 }
 
+p {
+  line-height: 20px;
+}
+
 h1,
 h2,
 ul,
@@ -114,6 +118,12 @@ img {
 }
 
 // body * { scrollbar-width: none; } /* Firefox */
+
+.section {
+  max-width: 1170px;
+  margin   : 0 auto;
+  padding  : 0 20px;
+}
 
 .none {
   display: none;
@@ -280,12 +290,6 @@ blockquote:before {
 
 body {
 
-  section {
-    max-width: 1170px;
-    margin   : 0 auto;
-    padding  : 0 20px;
-  }
-
   button {
     position        : absolute;
     left            : 0;
@@ -381,9 +385,8 @@ body {
     #about {
       padding-top: 80px;
 
-      >div {
-        max-width      : 500px;
-        // margin-right: 100px;
+      >article {
+        max-width: 500px;
 
         h2 {
           margin-bottom: 30px;
@@ -396,7 +399,6 @@ body {
           li {
             padding: 4px 10px 4px 0;
           }
-
         }
 
         .about__quote {
@@ -406,17 +408,33 @@ body {
           blockquote {
             padding: 6% 6% 6% 12%;
           }
-
         }
-
       }
 
       img {
         width : 580px;
         height: 680px;
       }
-
     }
+
+    .career {
+      padding   : 80px 0;
+      background: #F0F3FA;
+
+      img {
+        margin-left : -35%;
+        margin-right: 80px;
+      }
+
+      img, h2, p {
+        margin-bottom: 20px;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+
 
   }
 
@@ -460,7 +478,7 @@ body {
     flex-flow: column;
   }
 
-  img {
+  #about img {
     max-width : 100%;
     min-width : 100%;
     max-height: 100%;
@@ -471,11 +489,11 @@ body {
     font-size: 65px;
   }
 
-  body main #about>div {
+  body main #about>article {
     max-width: 100%;
   }
 
-  body main #about>div .about__quote {
+  body main #about>article .about__quote {
     position: absolute;
     bottom  : 3%;
     width   : 80%;
@@ -500,17 +518,14 @@ body {
 
   h2 {
     font-size: 40px;
+    line-height: 48px;
   }
 
   body main #about {
     padding-top: 20px;
   }
 
-  body main #about>div h2 {
-    margin-bottom: 0px;
-  }
-
-  blockquote,
+  blockquote, p,
   body header blockquote {
     font-size  : 14px;
     line-height: 16px;
@@ -530,10 +545,20 @@ body {
     left: 10px;
   }
 
-  body main #about>div .round__list {
+  body main #about>article .round__list {
     font-size  : 12px;
     line-height: 14px;
   }
+
+  body main .career {
+    padding: 40px 0;
+  }
+
+  body main .career img {
+    margin-left: -35%;
+    margin-right: unset;
+    width: 100%;
+}
 
 }
 
