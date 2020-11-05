@@ -1,11 +1,21 @@
 @font-face {
-  font-family: 'GilroyThin';
-  src        : url('../src/fonts/Gilroy-Thin.ttf');
+  font-family: 'GilroyLight';
+  src        : url('../src/fonts/Gilroy-Light.ttf');
 }
 
 @font-face {
   font-family: 'GilroyRegular';
   src        : url('../src/fonts/Gilroy-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'GilroyMedium';
+  src        : url('../src/fonts/Gilroy-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'GilroySemiBold';
+  src        : url('../src/fonts/Gilroy-SemiBold.ttf');
 }
 
 @font-face {
@@ -18,15 +28,42 @@
   src        : url('../src/fonts/td-neumann.otf');
 }
 
-$bodyColor     :#E5E5E5;
-$hoverColor    :#E96C0E;
-$iconColor     :#8794B8;
-$mainColor     :#171E30;
-$gilroyThin    : 'GilroyThin';
-$gilroyRegular : 'GilroyRegular';
-$gilroyBold    : 'GilroyBold';
+$hoverColor     :#E96C0E;
+$iconColor      :#8794B8;
+$mainColor      :#171E30;
+$borderColor    : #D1D6E3;
+$gilroyLight    : 'GilroyLight';
+$gilroyRegular  : 'GilroyRegular';
+$gilroyMedium   : 'GilroyMedium';
+$gilroySemiBold : 'GilroySemiBold';
+$gilroyBold     : 'GilroyBold';
 // 30px, 20px, 18px, 16px, 14px
-$neumann       : 'Neumann';
+$neumann        : 'Neumann';
+
+header,
+footer {
+  font-family: $gilroyRegular;
+}
+
+h1,
+h2,
+blockquote:before {
+  font-family: $neumann;
+}
+
+button {
+  font-family: $gilroySemiBold;
+}
+
+blockquote,
+.round__list {
+  font-family: $gilroyLight;
+}
+
+h2 {
+  font-size  : 70px;
+  line-height: 80px;
+}
 
 h1,
 h2,
@@ -77,6 +114,7 @@ img {
 }
 
 // body * { scrollbar-width: none; } /* Firefox */
+
 .none {
   display: none;
 }
@@ -109,19 +147,20 @@ a:hover {
   justify-content: space-between;
 }
 
-.flexstartbase {
+.flexbasestart,
+#about ul>li {
   display        : flex;
-  justify-content: flex-start;
   align-items    : baseline;
+  justify-content: flex-start;
 }
 
-.flexstartbet {
+.flexstartbet {  /**/
   display        : flex;
   align-items    : flex-start;
   justify-content: space-between;
 }
 
-.flexcenter {
+.flexcenter {  /**/
   display        : flex;
   align-items    : center;
   justify-content: center;
@@ -133,14 +172,14 @@ a:hover {
   justify-content: flex-start;
 }
 
-.flexcolcent {
+.flexcolcent { /**/
   display        : flex;
   flex-flow      : column;
   align-items    : center;
   justify-content: center;
 }
 
-.flexwrap {
+.flexwrap { /**/
   flex-wrap: wrap;
 }
 
@@ -157,10 +196,6 @@ button {
   cursor: pointer;
 }
 
-svg {
-  fill: none;
-}
-
 .email,
 .call {
   width       : 14px;
@@ -174,17 +209,16 @@ svg {
   height     : 35px;
   margin-left: 15px;
   stroke     : white;
-  transition : stroke .2s;
+  transition : stroke .2s ease-in-out;
+}
+
+svg {
+  fill: none;
 }
 
 .insta:hover,
 .facebook:hover {
   stroke: $hoverColor;
-}
-
-header,
-footer {
-  font-family: $gilroyRegular;
 }
 
 nav {
@@ -193,6 +227,7 @@ nav {
 
 nav a,
 h1,
+button,
 footer {
   color: white;
 }
@@ -201,9 +236,29 @@ a:hover {
   color: $hoverColor;
 }
 
+.round__list svg {
+  max-width   : 15px;
+  min-width   : 15px;
+  height      : 15px;
+  margin-right: 15px;
+}
+
+a {
+  transition: all .2s ease-in-out;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+blockquote:before {
+  content   : "\201C";
+  position  : absolute;
+  font-size : 80px;
+  font-style: normal;
+}
 
 body {
-  background: $bodyColor;
 
   section {
     max-width: 1170px;
@@ -219,8 +274,6 @@ body {
     background-image: linear-gradient(270deg, #E9760C 4.09%, #E62B1F 100%);
     box-shadow      : 0px 14px 6px rgba(21, 30, 53, 0.5);
     border-radius   : 25px;
-    font-family     : $gilroyRegular;
-    color           : white;
     transition      : opacity .2s ease-in-out;
   }
 
@@ -241,15 +294,10 @@ body {
       padding-top: 45px;
     }
 
-    blockquote {
-      color: $iconColor;
-    }
-
     li:nth-child(-n+5)>a:link {
       padding      : 12px 22px;
       border       : 1px solid transparent;
       border-radius: 25px;
-      transition   : all .2s ease-in-out;
     }
 
     li:nth-child(-n+5)>a:hover {
@@ -257,26 +305,21 @@ body {
     }
 
     h1 {
-      margin-top : 140px;
-      font-family: $neumann;
-      font-size  : 110px;
+      margin-top: 140px;
+      font-size : 110px;
     }
 
     blockquote {
       max-width : 490px;
       margin-top: 80px;
       font-size : 18px;
-      font-style: italic;
+      color     : $iconColor;
     }
 
-    blockquote:before {
-      content    : "\201C";
-      font-family: $neumann;
-      font-style : normal;
-      font-size  : 80px;
-      position   : absolute;
-      left       : -0;
-      top        : -45px;
+    blockquote::before {
+      top  : -45px;
+      left : 0;
+      color: #515D7E;
     }
 
     .call__buttons {
@@ -292,9 +335,50 @@ body {
   main {
     color: $mainColor;
 
-    h2 {
-      font-size: 70px;
+    blockquote {
+      border: 1px solid $borderColor;
+      background: #fff;
     }
+
+    blockquote::before {
+      top  : 0;
+      left : 20px;
+      color: #C3C9DB;
+    }
+
+    blockquote::after {
+      content   : "";
+      position  : absolute;
+      width: 50px;
+      height: 35px;
+      top: -15px;
+      right: 30px;
+      box-shadow: 2px -2px 0 -1px #D1D6E3;
+      transform: skewX(-20deg) skewY(-34deg);
+      background: #fff;
+    }
+
+    #about {
+      padding-bottom : 80px;
+      // background     : url(../img/about.png) 100% center no-repeat;
+      // background-size: contain;
+
+      h2 {
+        margin-top   : 60px;
+        margin-bottom: 20px;
+      }
+
+      .round__list {
+        max-width: 320px;
+      }
+
+      blockquote {
+        max-width : 500px;
+        margin-top: 85px;
+        padding   : 40px 30px 20px 70px;
+      }
+    }
+
   }
 
   footer {
@@ -323,7 +407,7 @@ body {
 
 .aboutcontainer {
   background: linear-gradient(rgba(52, 52, 52, 0.19), rgba(52, 52, 52, 0.19)),
-    url(./img/marina-vitale-205339-unspl.png) center center no-repeat;
+    url(../img/about.png) center center no-repeat;
   background-size: cover;
 }
 
