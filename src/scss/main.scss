@@ -124,6 +124,10 @@ img {
   display: block;
 }
 
+.grid {
+  display: grid;
+}
+
 i,
 .inlineblock,
 ::before,
@@ -131,6 +135,11 @@ i,
 footer nav a,
 .call__buttons {
   display: inline-block;
+}
+
+.width100,
+.grid {
+  width: 100%;
 }
 
 header nav {
@@ -154,13 +163,22 @@ a:hover {
   justify-content: flex-start;
 }
 
-.flexstartbet {  /**/
+.flexcolstartbet {
+  display        : flex;
+  flex-flow      : column;
+  align-items    : flex-start;
+  justify-content: space-between;
+}
+
+.flexstartbet,
+#about {
   display        : flex;
   align-items    : flex-start;
   justify-content: space-between;
 }
 
-.flexcenter {  /**/
+.flexcenter {
+  /**/
   display        : flex;
   align-items    : center;
   justify-content: center;
@@ -172,14 +190,16 @@ a:hover {
   justify-content: flex-start;
 }
 
-.flexcolcent { /**/
+.flexcolcent {
+  /**/
   display        : flex;
   flex-flow      : column;
   align-items    : center;
   justify-content: center;
 }
 
-.flexwrap { /**/
+.flexwrap {
+  /**/
   flex-wrap: wrap;
 }
 
@@ -336,7 +356,7 @@ body {
     color: $mainColor;
 
     blockquote {
-      border: 1px solid $borderColor;
+      border    : 1px solid $borderColor;
       background: #fff;
     }
 
@@ -349,34 +369,53 @@ body {
     blockquote::after {
       content   : "";
       position  : absolute;
-      width: 50px;
-      height: 35px;
-      top: -15px;
-      right: 30px;
-      box-shadow: 2px -2px 0 -1px #D1D6E3;
-      transform: skewX(-20deg) skewY(-34deg);
+      width     : 50px;
+      height    : 35px;
+      top       : -17px;
+      right     : 30px;
+      box-shadow: 1px -1px 0 0 #D1D6E3;
+      transform : skewX(-20deg) skewY(-35deg);
       background: #fff;
     }
 
     #about {
-      padding-bottom : 80px;
-      // background     : url(../img/about.png) 100% center no-repeat;
-      // background-size: contain;
+      padding-top: 80px;
 
-      h2 {
-        margin-top   : 60px;
-        margin-bottom: 20px;
+      >div {
+        max-width      : 500px;
+        // margin-right: 100px;
+
+        h2 {
+          margin-bottom: 30px;
+        }
+
+        .round__list {
+          width        : 100%;
+          margin-bottom: 20px;
+
+          li {
+            padding: 4px 10px 4px 0;
+          }
+
+        }
+
+        .about__quote {
+          margin-top   : 20px;
+          margin-bottom: 60px;
+
+          blockquote {
+            padding: 6% 6% 6% 12%;
+          }
+
+        }
+
       }
 
-      .round__list {
-        max-width: 320px;
+      img {
+        width : 580px;
+        height: 680px;
       }
 
-      blockquote {
-        max-width : 500px;
-        margin-top: 85px;
-        padding   : 40px 30px 20px 70px;
-      }
     }
 
   }
@@ -417,13 +456,157 @@ body {
     display: none;
   }
 
+  .column1024 {
+    flex-flow: column;
+  }
+
+  img {
+    max-width : 100%;
+    min-width : 100%;
+    max-height: 100%;
+    min-height: 100%;
+  }
+
   body header h1 {
     font-size: 65px;
   }
+
+  body main #about>div {
+    max-width: 100%;
+  }
+
+  body main #about>div .about__quote {
+    position: absolute;
+    bottom  : 3%;
+    width   : 80%;
+    left    : 0;
+    right   : 0;
+    margin  : 0 auto;
+  }
+
+  body main blockquote::after {
+    width    : 35px;
+    height   : 30px;
+    top      : -11px;
+    transform: skewX(60deg) skewY(-35deg);
+  }
+
 }
 
 @media screen and (max-width: 768px) {
   .column768 {
     flex-flow: column;
   }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  body main #about {
+    padding-top: 20px;
+  }
+
+  body main #about>div h2 {
+    margin-bottom: 0px;
+  }
+
+  blockquote,
+  body header blockquote {
+    font-size  : 14px;
+    line-height: 16px;
+  }
+
+  blockquote:before {
+    font-size: 60px;
+  }
+
+  body header blockquote::before {
+    top : 0;
+    left: 0;
+  }
+
+  body main blockquote::before {
+    top : 30px;
+    left: 10px;
+  }
+
+  body main #about>div .round__list {
+    font-size  : 12px;
+    line-height: 14px;
+  }
+
 }
+
+@media screen and (max-width: 580px) {
+  body main #about img {
+    width : 100%;
+    height: 100%;
+  }
+}
+
+
+// padding-bottom          : 80px;
+// grid-template-columns: repeat(4, 1fr);
+// grid-template-rows: 140px, 300px 120px;
+// padding-bottom : 80px;
+// background     : url(../img/about.png) 100% center no-repeat;
+// background-size: contain;
+// grid-template-areas  :
+// "item01 item01 item04 item04"
+// "item02 item03 item04 item04"
+// "item05 item05 item04 item04";
+// grid-template-columns: 23% 23% 23% 23%;
+// grid-template-rows   : 120px 280px 197px;
+// grid-template-rows   : 20% 50% 30%;
+// justify-content      : space-between;
+// align-items          : center;
+// grid-gap             : 5px;
+// padding              : 10px;
+
+// .item01 {
+// grid-area: item01;
+// grid-column-start: 1;
+// grid-column-end  : 3;
+// grid-row-start   : 1;
+// grid-row-end     : 2;
+// }
+
+// .item02 {
+// grid-area: item02;
+// grid-column-start: 1;
+// grid-column-end  : 2;
+// grid-row-start   : 2;
+// grid-row-end     : 3;
+// }
+
+// .item03 {
+// grid-area: item03;
+// grid-column-start: 2;
+// grid-column-end  : 3;
+// grid-row-start   : 2;
+// grid-row-end     : 3;
+// }
+
+// .item04 {
+// grid-area: item04;
+// max-width: 100%;
+// max-height: 100%;
+// width            : 564px;
+// height           : 678px;
+// grid-column-start: 3;
+// grid-column-end  : 5;
+// grid-row-start   : 1;
+// grid-row-end     : 4;
+// }
+
+// .item05 {
+// grid-area: item05;
+// padding     : 40px 30px 30px 70px;
+// margin-right: 20px;
+// margin-top: auto;
+// grid-column-start: 1;
+// grid-column-end  : 3;
+// grid-row-start   : 3;
+// grid-row-end     : 4;
+// max-height       : 140px;
+// }
