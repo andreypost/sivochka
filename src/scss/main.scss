@@ -56,9 +56,13 @@ button {
   font-family: $gilroySemiBold;
 }
 
-blockquote,
 .round__list {
   font-family: $gilroyLight;
+}
+
+h1,
+h2 {
+  font-weight: normal;
 }
 
 h2 {
@@ -66,9 +70,19 @@ h2 {
   line-height: 80px;
 }
 
+a,
+button,
+.round__list {
+  font-size: 16px;
+}
+
 p {
   line-height: 20px;
 }
+
+// * {
+// box-sizing: border-box;
+// }
 
 h1,
 h2,
@@ -121,9 +135,9 @@ img {
 // body * { scrollbar-width: none; } /* Firefox */
 
 .section {
-  max-width: 1170px;
+  max-width: 1160px;
   margin   : 0 auto;
-  padding  : 0 20px;
+  padding  : 0 10px;
 }
 
 .none {
@@ -157,6 +171,7 @@ header nav {
   white-space: nowrap;
 }
 
+a,
 a:hover {
   text-decoration: none;
 }
@@ -188,11 +203,10 @@ a:hover {
   justify-content: space-between;
 }
 
-.flexcenter {
-  /**/
+.flexstretchbet {
   display        : flex;
-  align-items    : center;
-  justify-content: center;
+  align-items    : stretch;
+  justify-content: space-between;
 }
 
 .flexcentstart {
@@ -232,6 +246,7 @@ button {
   width       : 14px;
   height      : 12px;
   margin-right: 6px;
+  fill        : none;
 }
 
 .insta,
@@ -239,12 +254,9 @@ button {
   width      : 35px;
   height     : 35px;
   margin-left: 15px;
+  fill       : none;
   stroke     : white;
   transition : stroke .2s ease-in-out;
-}
-
-svg {
-  fill: none;
 }
 
 .insta:hover,
@@ -272,6 +284,7 @@ a:hover {
   min-width   : 15px;
   height      : 15px;
   margin-right: 15px;
+  fill        : none;
 }
 
 a {
@@ -317,39 +330,47 @@ body {
 
     nav {
       padding-top: 45px;
-    }
 
-    li:nth-child(-n+5)>a:link {
-      padding      : 12px 22px;
-      border       : 1px solid transparent;
-      border-radius: 25px;
-    }
+      li:nth-child(-n+5)>a:link {
+        padding      : 12px 22px;
+        border       : 1px solid transparent;
+        border-radius: 25px;
+      }
 
-    li:nth-child(-n+5)>a:hover {
-      border-color: $hoverColor;
+      li:nth-child(-n+5)>a:hover {
+        border-color: $hoverColor;
+      }
+
+      p {
+        font-size  : 14px;
+        line-height: 24px;
+      }
+
     }
 
     h1 {
-      margin-top: 140px;
+      margin-top: 160px;
       font-size : 110px;
     }
 
     blockquote {
-      max-width : 490px;
-      margin-top: 80px;
-      font-size : 18px;
-      color     : $iconColor;
+      max-width  : 490px;
+      margin-top : 80px;
+      font-family: $gilroyRegular;
+      font-size  : 18px;
+      line-height: 24px;
+      color      : $iconColor;
     }
 
     blockquote::before {
-      top  : -45px;
+      top  : 0;
       left : 0;
       color: #515D7E;
     }
 
     .call__buttons {
       margin-top   : 60px;
-      margin-bottom: 115px;
+      margin-bottom: 170px;
     }
 
     button {
@@ -361,12 +382,14 @@ body {
     color: $mainColor;
 
     blockquote {
-      border    : 1px solid $borderColor;
-      background: #fff;
+      border     : 1px solid $borderColor;
+      font-family: $gilroyLight;
+      line-height: 20px;
+      background : #fff;
     }
 
     blockquote::before {
-      top  : 0;
+      top  : 45px;
       left : 20px;
       color: #C3C9DB;
     }
@@ -381,6 +404,10 @@ body {
       box-shadow: 1px -1px 0 0 #D1D6E3;
       transform : skewX(-20deg) skewY(-35deg);
       background: #fff;
+    }
+
+    p {
+      font-size: 16px;
     }
 
     #about {
@@ -398,7 +425,7 @@ body {
           margin-bottom: 20px;
 
           li {
-            padding: 4px 10px 4px 0;
+            padding: 4px 4px 4px 0;
           }
         }
 
@@ -436,23 +463,115 @@ body {
           font-weight: bold;
         }
       }
+
+      p {
+        font-family: $gilroyMedium;
+      }
     }
 
     .services {
       border-top: 2px solid $lineColor;
 
-      .section>div {
-        flex: 1;
+      h2 {
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 20px 0;
       }
 
+      h3 {
+        margin-top   : 60px;
+        margin-bottom: 20px;
+        font-size    : 30px;
+        font-family  : $gilroyRegular;
+      }
+
+      .section>div {
+        flex       : 1 50%;
+        display    : flex;
+        flex-flow  : column;
+        border-left: 2px solid $lineColor;
+
+        .services__list {
+          margin-left  : 40px;
+          margin-bottom: auto;
+
+          article {
+            max-width: 55%;
+          }
+
+          li {
+            padding: 4px 0;
+          }
+
+          img {
+            position: absolute;
+            top     : 0;
+            right   : 0;
+            width   : 287px;
+            height  : 376px;
+            z-index : -99;
+          }
+
+        }
+
+        .services__call {
+          margin-top   : 20px;
+          margin-bottom: 50px;
+
+          .services__contract {
+            width                     : 41%;
+            border-top-right-radius   : 25px;
+            border-bottom-right-radius: 25px;
+            background                : #F0F3FA;
+
+            svg {
+              width : 32px;
+              height: 30px;
+              margin: 10px auto;
+            }
+
+            p {
+              margin-right: auto;
+              font-family : $gilroyRegular;
+            }
+          }
+
+          button {
+            width     : 48%;
+            height    : 50px;
+            left      : unset;
+            right     : 10px;
+            box-shadow: unset;
+          }
+        }
+      }
+
+      .section>div:last-child {
+        border-right  : 2px solid $lineColor;
+      }
+
+
     }
-
-
   }
 
   footer {
     background: #223A72;
 
+    nav ul {
+      padding-top: 40px;
+      margin-bottom: 70px;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    } 
+
+    >p {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 40px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -521,6 +640,23 @@ body {
     transform: skewX(60deg) skewY(-35deg);
   }
 
+  body main .services .section>div:last-child {
+    border-top: 2px solid #F0F3FA;
+  }
+
+  body main .services .section>div:first-child {
+    border-top  : 2px solid #F0F3FA;
+    border-right: 2px solid #F0F3FA;
+  }
+
+  body main .services .section>div .services__list article {
+    max-width: 100%;
+}
+
+  .services__list img {
+    opacity: .2;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -538,7 +674,7 @@ body {
   }
 
   blockquote,
-  p,
+  body main p,
   body header blockquote {
     font-size  : 14px;
     line-height: 16px;
@@ -558,7 +694,7 @@ body {
     left: 10px;
   }
 
-  body main #about>article .round__list {
+  body main #about>article .round__list, body footer>p {
     font-size  : 12px;
     line-height: 14px;
   }
@@ -573,6 +709,17 @@ body {
     width       : 100%;
   }
 
+
+
+  body footer nav ul {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+body footer nav ul .facebook, body footer nav ul .insta {
+  margin: 20px;
+}
+
 }
 
 @media screen and (max-width: 580px) {
@@ -582,69 +729,3 @@ body {
   }
 }
 
-
-// padding-bottom          : 80px;
-// grid-template-columns: repeat(4, 1fr);
-// grid-template-rows: 140px, 300px 120px;
-// padding-bottom : 80px;
-// background     : url(../img/about.png) 100% center no-repeat;
-// background-size: contain;
-// grid-template-areas  :
-// "item01 item01 item04 item04"
-// "item02 item03 item04 item04"
-// "item05 item05 item04 item04";
-// grid-template-columns: 23% 23% 23% 23%;
-// grid-template-rows   : 120px 280px 197px;
-// grid-template-rows   : 20% 50% 30%;
-// justify-content      : space-between;
-// align-items          : center;
-// grid-gap             : 5px;
-// padding              : 10px;
-
-// .item01 {
-// grid-area: item01;
-// grid-column-start: 1;
-// grid-column-end  : 3;
-// grid-row-start   : 1;
-// grid-row-end     : 2;
-// }
-
-// .item02 {
-// grid-area: item02;
-// grid-column-start: 1;
-// grid-column-end  : 2;
-// grid-row-start   : 2;
-// grid-row-end     : 3;
-// }
-
-// .item03 {
-// grid-area: item03;
-// grid-column-start: 2;
-// grid-column-end  : 3;
-// grid-row-start   : 2;
-// grid-row-end     : 3;
-// }
-
-// .item04 {
-// grid-area: item04;
-// max-width: 100%;
-// max-height: 100%;
-// width            : 564px;
-// height           : 678px;
-// grid-column-start: 3;
-// grid-column-end  : 5;
-// grid-row-start   : 1;
-// grid-row-end     : 4;
-// }
-
-// .item05 {
-// grid-area: item05;
-// padding     : 40px 30px 30px 70px;
-// margin-right: 20px;
-// margin-top: auto;
-// grid-column-start: 1;
-// grid-column-end  : 3;
-// grid-row-start   : 3;
-// grid-row-end     : 4;
-// max-height       : 140px;
-// }

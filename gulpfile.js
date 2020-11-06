@@ -87,7 +87,8 @@ gulp.task("image-min", () =>
 
 gulp.task("compile-sass", function () {
   return gulp
-    .src(["node_modules/bootstrap/dist/css/bootstrap.css", "./src/scss/*.scss"])
+    // .src(["node_modules/bootstrap/dist/css/bootstrap.css", "./src/scss/*.scss"])
+    .src(["node_modules/normalize.css/normalize.css", "./src/scss/*.scss"])
     .pipe(sass())
     .pipe(concat("style.css"))
     .pipe(gulp.dest("./src/css/"));
