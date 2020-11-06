@@ -440,7 +440,7 @@ body {
       }
 
       img {
-        width : 580px;
+        width : 50%;
         height: 680px;
       }
     }
@@ -474,7 +474,7 @@ body {
       background: linear-gradient(180deg, rgba(239, 242, 250, 0) 0%, #EFF2FA 100%);
 
       img {
-        width : 480px;
+        width : 40%;
         height: 600px;
       }
 
@@ -483,8 +483,9 @@ body {
       }
 
       blockquote {
-        max-width: 580px;
-        padding  : 10% 5% 5%;
+        max-width    : 80%;
+        margin-bottom: 20px;
+        padding      : 10% 5% 5%;
 
         p {
           margin-bottom: 20px;
@@ -678,14 +679,31 @@ body {
     border-right: 2px solid #F0F3FA;
   }
 
-  body main .services .section>div .services__list article {
+  body main .services .section>div .services__list article,
+  body main .sertificate blockquote {
     max-width: 100%;
+  }
+
+  body main .sertificate {
+    padding: 20px 0;
   }
 
   .services__list img {
     opacity: .2;
   }
 
+  body main .sertificate img,
+  .sertificate__top article {
+    order: 2;
+    width: 100%;
+  }
+
+  .sertificate__top article {
+    order: 1;
+  }
+ .slider {
+   order: 3;
+ }
 
 
 }
@@ -741,8 +759,6 @@ body {
     width       : 100%;
   }
 
-
-
   body footer nav ul {
     padding-top  : 20px;
     margin-bottom: 20px;
@@ -753,19 +769,23 @@ body {
     margin: 20px;
   }
 
-  .sertificate__top img {
-    order: 2;
+  body main .sertificate img {
+    height: 400px;
   }
 
-  .sertificate__top article {
-    order: 1;
-  }
 
 }
 
 @media screen and (max-width: 580px) {
   body main #about img {
-    width : 100%;
     height: 100%;
+  }
+
+  body main .services .section>div .services__call .services__contract {
+    width: 47%;
+  }
+
+  .about__lists p {
+    font-size: 12px;
   }
 }
