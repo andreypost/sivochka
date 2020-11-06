@@ -469,13 +469,41 @@ body {
       }
     }
 
+    .sertificate {
+      padding   : 80px 0 90px;
+      background: linear-gradient(180deg, rgba(239, 242, 250, 0) 0%, #EFF2FA 100%);
+
+      img {
+        width : 480px;
+        height: 600px;
+      }
+
+      h2 {
+        margin-bottom: 40px;
+      }
+
+      blockquote {
+        max-width: 580px;
+        padding  : 10% 5% 5%;
+
+        p {
+          margin-bottom: 20px;
+        }
+      }
+
+      blockquote::after {
+        right: 115px;
+      }
+
+    }
+
     .services {
       border-top: 2px solid $lineColor;
 
       h2 {
-        margin-top: auto;
+        margin-top   : auto;
         margin-bottom: auto;
-        padding: 20px 0;
+        padding      : 20px 0;
       }
 
       h3 {
@@ -547,7 +575,7 @@ body {
       }
 
       .section>div:last-child {
-        border-right  : 2px solid $lineColor;
+        border-right: 2px solid $lineColor;
       }
 
 
@@ -558,19 +586,20 @@ body {
     background: #223A72;
 
     nav ul {
-      padding-top: 40px;
+      padding-top  : 40px;
       margin-bottom: 70px;
+
       p {
-        font-size: 14px;
+        font-size  : 14px;
         line-height: 24px;
       }
-    } 
+    }
 
     >p {
-      display: flex;
+      display        : flex;
       justify-content: center;
-      padding-bottom: 40px;
-      font-size: 16px;
+      padding-bottom : 40px;
+      font-size      : 16px;
     }
   }
 }
@@ -651,11 +680,13 @@ body {
 
   body main .services .section>div .services__list article {
     max-width: 100%;
-}
+  }
 
   .services__list img {
     opacity: .2;
   }
+
+
 
 }
 
@@ -694,7 +725,8 @@ body {
     left: 10px;
   }
 
-  body main #about>article .round__list, body footer>p {
+  body main #about>article .round__list,
+  body footer>p {
     font-size  : 12px;
     line-height: 14px;
   }
@@ -712,13 +744,22 @@ body {
 
 
   body footer nav ul {
-    padding-top: 20px;
+    padding-top  : 20px;
     margin-bottom: 20px;
-}
+  }
 
-body footer nav ul .facebook, body footer nav ul .insta {
-  margin: 20px;
-}
+  body footer nav ul .facebook,
+  body footer nav ul .insta {
+    margin: 20px;
+  }
+
+  .sertificate__top img {
+    order: 2;
+  }
+
+  .sertificate__top article {
+    order: 1;
+  }
 
 }
 
@@ -728,4 +769,3 @@ body footer nav ul .facebook, body footer nav ul .insta {
     height: 100%;
   }
 }
-
