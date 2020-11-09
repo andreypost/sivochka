@@ -66,7 +66,7 @@
                 <blockquote class="relative"> Предоставляю клиентам качественные услуги, связанные с недвижимостью,
                     бизнесом и законностью. Знаю, что самое ценное в жизни — это время, поэтому решаю задачи быстро.
                 </blockquote>
-                <div class="relative call__buttons">
+                <div class="callContact relative call__buttons">
                     <button>Связаться</button>
                     <button>Связаться</button>
                 </div>
@@ -269,7 +269,7 @@
                             </svg>
                             <p>Сразу после <br> договора</p>
                         </div>
-                        <div class="call__buttons">
+                        <div class="callContact call__buttons">
                             <button>Связаться</button>
                             <button>Связаться</button>
                         </div>
@@ -326,7 +326,7 @@
                             </svg>
                             <p>Готово за <br> 14 дней</p>
                         </div>
-                        <div class="call__buttons">
+                        <div class="callContact call__buttons">
                             <button>Связаться</button>
                             <button>Связаться</button>
                         </div>
@@ -372,7 +372,7 @@
                             </svg>
                             <p>Сразу после <br> договора</p>
                         </div>
-                        <div class="call__buttons">
+                        <div class="callContact call__buttons">
                             <button>Связаться</button>
                             <button>Связаться</button>
                         </div>
@@ -435,7 +435,7 @@
                             </svg>
                             <p>Готово за <br> 14 дней</p>
                         </div>
-                        <div class="call__buttons">
+                        <div class="callContact call__buttons">
                             <button>Связаться</button>
                             <button>Связаться</button>
                         </div>
@@ -481,7 +481,7 @@
                             </svg>
                             <p>Сразу после <br> договора</p>
                         </div>
-                        <div class="call__buttons">
+                        <div class="callContact call__buttons">
                             <button>Связаться</button>
                             <button>Связаться</button>
                         </div>
@@ -648,7 +648,89 @@
         </div>
         <p>© 2020 Все права защищены. Василий Сивочка.</p>
     </footer>
-    <div id="menuModal" class="relative none">
+    <div class="canvas none"></div>
+    <div id="menuModal" class="relative">
+        <div>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#sertificate">Сертификаты</a></li>
+                <li><a href="#publications">Публикации</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <div class="flexcentbet menumodal__call">
+                <div>
+                    <div class="flexbasestart">
+                        <svg class="email">
+                            <use xlink:href="#icon-email"></use>
+                        </svg>
+                        <p>Написать письмо</p>
+                    </div>
+                    <a href="mailto:sivochka@gmail.com" target="blanc">sivochka@gmail.com</a>
+                </div>
+                <div>
+                    <div class="flexbasestart">
+                        <svg class="call">
+                            <use xlink:href="#icon-call"></use>
+                        </svg>
+                        <p>Позвонить</p>
+                    </div>
+                    <a href="tel:+380993058745">+38 099 305 87 45</a>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div id="contactModal" class="none">
+        <div>
+            <i class="close"></i>
+            <form action="/auth/login/" id="contactForm" class="relative" method="post">
+                <h2>ЗАПОЛНИТЕ <br> ФОРМУ</h2>
+                <p>Я СКОРО СВЯЖУСЬ С ВАМИ!</p>
+                <div class="relative">
+                    <input type="text" name="" id="" required="" placeholder="Имя">
+                    <svg class="person">
+                        <use xlink:href="#icon-person"></use>
+                    </svg>
+                </div>
+                <div class="relative">
+                    <input type="tel" name="" id="" required="" placeholder="Телефон">
+                    <svg class="call">
+                        <use xlink:href="#icon-call"></use>
+                    </svg>
+                </div>
+                <div form="contactForm" class="call__buttons relative">
+                    <button>Связаться</button>
+                    <button>Связаться</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <div id="contactModal" class="none">
+        <div>
+            <i class="close"></i>
+            <form action="/auth/login/" id="contactForm" class="relative" method="post">
+                <h2>ЗАПОЛНИТЕ <br> ФОРМУ</h2>
+                <p>Я СКОРО СВЯЖУСЬ С ВАМИ!</p>
+                <div class="relative">
+                    <input type="text" name="" id="" required="" placeholder="Имя">
+                    <svg class="person">
+                        <use xlink:href="#icon-person"></use>
+                    </svg>
+                </div>
+                <div class="relative">
+                    <input type="tel" name="" id="" required="" placeholder="Телефон">
+                    <svg class="call">
+                        <use xlink:href="#icon-call"></use>
+                    </svg>
+                </div>
+                <div form="contactForm" class="call__buttons relative">
+                    <button>Связаться</button>
+                    <button>Связаться</button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+    <!-- <div id="menuModal" class="relative none">
         <div>
             <div>
                 <ul>
@@ -680,21 +762,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="contactModal" class="none">
-        <div class="relative">
-            <svg>
-                <use xlink:href="#icon-close"></use>
-            </svg>
-            <form action="/auth/login/" id="contactForm" class="" method="post">
-                <h2>ЗАПОЛНИТЕ <br> ФОРМУ</h2>
-                <p>Я СКОРО СВЯЖУСЬ С ВАМИ!</p>
-                <input type="text" name="" id="" required="" placeholder="Имя">
-                <input type="tel" name="" id="" required="" placeholder="Телефон">
-                <button form="contactForm">Связаться</button>
-            </form>
-        </div>
-    </div>
+    </div> -->
+   
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script> -->
     <!-- build:js -->

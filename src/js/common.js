@@ -85,22 +85,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
   
-  const burgerNav = (burger, modal) => {
-    const toggle = () => {
-      // setTimeout(() => modal.querySelector('div').classList.toggle('active'), 100)
-      burger.classList.toggle('active')
-      modal.classList.toggle('block')
-      modal.querySelector('div').classList.toggle('active')
-      body.classList.toggle('active')
-    }
-    burger.onclick = () => {
-      toggle()
-    }
-    window.addEventListener('click', (e) => {
-        if (e.target === modal || e.target.tagName === 'A') toggle()
-    })
+//   const burgerNav = (burger, modal) => {
+//     const toggle = () => {
+//       // setTimeout(() => modal.querySelector('div').classList.toggle('active'), 100)
+//       burger.classList.toggle('active')
+//       modal.classList.toggle('block')
+//       modal.querySelector('div').classList.toggle('active')
+//       body.classList.toggle('active')
+//     }
+//     burger.onclick = () => {
+//       toggle()
+//     }
+//     window.addEventListener('click', (e) => {
+//         if (e.target === modal || e.target.tagName === 'A') toggle()
+//     })
+// }
+// burgerNav(document.querySelector('.header__burger'), document.getElementById('menuModal'))
+
+const burgerNav = (burger, canvas, modal) => {
+  const toggle = () => {
+    burger.classList.toggle('active')
+    canvas.classList.toggle('block')
+    modal.classList.toggle('active')
+    body.classList.toggle('active')
+  }
+  burger.onclick = () => {
+    toggle()
+  }
+  window.addEventListener('click', (e) => {
+      if (e.target === canvas || e.target.tagName === 'A') toggle()
+  })
 }
-burgerNav(document.querySelector('.header__burger'), document.getElementById('menuModal'))
+burgerNav(document.querySelector('.header__burger'), document.querySelector('.canvas'), document.getElementById('menuModal'))
+
+const showModal = (modal) => {
+  const hideModal = (modal) => {
+    modal.style.display = 'none'
+    body.style.overflowY = ''
+    body.style.paddingRight = `${0}px`
+  }
+  let width = document.documentElement.clientWidth
+  body.style.overflowY = 'hidden'
+  body.style.paddingRight = `${document.documentElement.clientWidth - width}px`
+  modal.style.display = 'block'
+  modal.onclick = (e) => {
+    console.log(e.target)
+      if (e.target.classList.contains('close')) hideModal(modal)
+  }
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hideModal(modal)
+  })
+  window.addEventListener('click', (e) => {
+      // if (e.target === modal) hideModal(modal)
+  })
+}
+
+const modalForm = (buttons, modal) => {
+  buttons.forEach((butt) => {
+    butt.onclick = (e) => {
+      showModal(modal)
+    }
+  })
+}
+modalForm(document.querySelectorAll('.callContact'), document.getElementById('contactModal'))
 
   $(".slider").slick({
  
