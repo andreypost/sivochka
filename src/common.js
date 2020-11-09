@@ -31,7 +31,8 @@
     location.hostname !== "127.0.0.1" &&
     location.host !== ""
   ) {
-    var files = ["/wp-content/themes/ukrmeatbest/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
+    var files = ["/img/symbol_sprite.html", "/img/svg/*"],
+    // var files = ["/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
       revision = 9;
 
     if (
@@ -53,6 +54,7 @@
         else document.addEventListener("DOMContentLoaded", insertIT);
       };
       files.forEach(file => {
+        console.log(file)
       try {
         let request = new XMLHttpRequest();
         request.open("GET", file, true);
@@ -71,11 +73,71 @@
     })
   } else {
     load("/img/symbol_sprite.html", document.querySelector("body"));
-    load("/img/gradient.svg", document.querySelector("body"));
+    // load("/img/gradient.svg", document.querySelector("body"));
+    load("/img/svg/*", document.querySelector("body"));
   }
+  
 })(window, document);
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  window.addEventListener("resize", function () { 
+
+  });
+  
+  const burgerNav = (burger, modal) => {
+    console.log(burger)
+    burger.onclick = () => {
+        burger.classList.toggle('active')
+        modal.classList.toggle('block')
+        modal.querySelector('div').classList.toggle('active')
+    }
+    window.addEventListener('click', (e) => {
+        // if (e.target === modal) {
+          // burger.classList.toggle('active')
+            // modal.classList.remove('block')
+        // }
+    })
+}
+burgerNav(document.querySelector('.header__burger'), document.getElementById('#menuModal'))
+
+  // $(".slider").slick({
+ 
+  //   // normal options...
+  //   infinite: false,
+   
+  //   // the magic
+  //   responsive: [{
+   
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         infinite: true
+  //       }
+   
+  //     }, {
+   
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         dots: true
+  //       }
+   
+  //     }, {
+   
+  //       breakpoint: 300,
+  //       settings: "unslick" // destroys slick
+   
+  //     }]
+  // });
+});
+
+
+
+/*
+
 document.addEventListener("DOMContentLoaded", function () {
+
   const STICKY_HEIGHT = 43;
   const body = document.querySelector("body");
   (/iP(hone|od|ad)/.test(navigator.platform)) && document.querySelector('html').classList.add('ios');
@@ -84,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     preHeaderHeight = document.querySelector('.pre-header').clientHeight;
   });
   body.classList.add('siteloaded');
-  //set url to href
+  set url to href
   const supWebp = Boolean(document.querySelector('html.webp'));
   const galleryLinks = document.querySelectorAll('.gallery__wrapper a');
   galleryLinks.forEach(link => {
@@ -264,38 +326,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     e.preventDefault();
   });
-
   onScroll();
   parallax();
   stickyHeader();
-
-  $(".slider").slick({
- 
-    // normal options...
-    infinite: false,
-   
-    // the magic
-    responsive: [{
-   
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          infinite: true
-        }
-   
-      }, {
-   
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          dots: true
-        }
-   
-      }, {
-   
-        breakpoint: 300,
-        settings: "unslick" // destroys slick
-   
-      }]
-  });
 });
+*/

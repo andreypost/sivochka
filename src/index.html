@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Sivochka</title>
-    <!-- build:css -->
     <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/> -->
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/> -->
 
 
+    <!-- build:css -->
     <link rel="stylesheet" href="./css/style.css" />
-
     <!-- endbuild -->
 </head>
 
@@ -20,13 +19,13 @@
     <header>
         <div class="section">
             <nav>
-                <ul class="flexcentbet none1024">
-                    <li><a href="#about">Обо мне</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#sertificate">Сертификаты</a></li>
-                    <li><a href="#publications">Публикации</a></li>
-                    <li><a href="#contacts">Контакты</a></li>
-                    <li>
+                <ul class="flexcentbet">
+                    <li class="none1024"><a href="#about">Обо мне</a></li>
+                    <li class="none1024"><a href="#services">Услуги</a></li>
+                    <li class="none1024"><a href="#sertificate">Сертификаты</a></li>
+                    <li class="none1024"><a href="#publications">Публикации</a></li>
+                    <li class="none1024"><a href="#contacts">Контакты</a></li>
+                    <li class="none1024">
                         <div class="flexbasestart">
                             <svg class="email">
                                 <use xlink:href="#icon-email"></use>
@@ -34,6 +33,11 @@
                             <p>Написать письмо</p>
                         </div>
                         <a href="mailto:sivochka@gmail.com" target="blanc">sivochka@gmail.com</a>
+                    </li>
+                    <li class="none block1024 relative header__burger ">
+                        <i></i>
+                        <i></i>
+                        <i></i>
                     </li>
                     <li>
                         <div class="flexbasestart">
@@ -191,13 +195,25 @@
                     </div>
                 </article>
                 <div class="slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-                    <div><h3>1</h3></div>
-                    <div><h3>2</h3></div>
-                    <div><h3>3</h3></div>
-                    <div><h3>4</h3></div>
-                    <div><h3>5</h3></div>
-                    <div><h3>6</h3></div>
-                  </div>
+                    <div>
+                        <h3>1</h3>
+                    </div>
+                    <div>
+                        <h3>2</h3>
+                    </div>
+                    <div>
+                        <h3>3</h3>
+                    </div>
+                    <div>
+                        <h3>4</h3>
+                    </div>
+                    <div>
+                        <h3>5</h3>
+                    </div>
+                    <div>
+                        <h3>6</h3>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -550,30 +566,31 @@
                 </div>
             </div>
         </div>
-
         <div id="publications" class="section flexcentbet public flexwrap">
             <div class="public__box">
                 <div class="public__img">
                 </div>
-                <a href="">Проведение Энергоаудита зданий и предприятий Проведение Энергоаудита зданий и предприятий Проведение Энергоаудита зданий и предприятий</a>
-                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности, связанная с нормами и правилами, связана</p>
+                <a href="">Проведение Энергоаудита зданий и предприятий Проведение Энергоаудита зданий и предприятий
+                    Проведение Энергоаудита зданий и предприятий</a>
+                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности,
+                    связанная с нормами и правилами, связана</p>
             </div>
             <div class="public__box">
                 <div class="public__img">
                 </div>
-                <a href="">Оценка бизнеса при выходе одного из учредителей Оценка бизнеса при выходе одного из учредителей</a>
-                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности, связанная с нормами и правилами, связана</p>
+                <a href="">Оценка бизнеса при выходе одного из учредителей Оценка бизнеса при выходе одного из
+                    учредителей</a>
+                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности,
+                    связанная с нормами и правилами, связана</p>
             </div>
             <div class="public__box">
                 <div class="public__img">
                 </div>
                 <a href="">Куда движемся? Мои принципы управления компанией</a>
-                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности, связанная с нормами и правилами, связана</p>
+                <p>Любая сфера деятельности, связанная с нормами и правилами, связана Любая сфера деятельности,
+                    связанная с нормами и правилами, связана</p>
             </div>
         </div>
-
-
-
     </main>
     <footer id="contacts">
         <div class="section">
@@ -631,7 +648,40 @@
         </div>
         <p>© 2020 Все права защищены. Василий Сивочка.</p>
     </footer>
-    <div id="contactModal">
+    <div id="menuModal" class="relative none ">
+        <div class="">
+            <div>
+                <ul>
+                    <li><a href="">Обо мне</a></li>
+                    <li><a href="">Услуги</a></li>
+                    <li><a href="">Сертификаты</a></li>
+                    <li><a href="">Публикации</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+                <div>
+                    <div>
+                        <div class="flexbasestart">
+                            <svg class="email">
+                                <use xlink:href="#icon-email"></use>
+                            </svg>
+                            <p>Написать письмо</p>
+                        </div>
+                        <a href="mailto:sivochka@gmail.com" target="blanc">sivochka@gmail.com</a>
+                    </div>
+                    <div>
+                        <div class="flexbasestart">
+                            <svg class="call">
+                                <use xlink:href="#icon-call"></use>
+                            </svg>
+                            <p>Позвонить</p>
+                        </div>
+                        <a href="tel:+380993058745">+38 099 305 87 45</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contactModal" class="none">
         <div class="relative">
             <svg>
                 <use xlink:href="#icon-close"></use>
