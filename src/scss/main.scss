@@ -301,7 +301,7 @@ blockquote:before {
   font-size : 80px;
   font-style: normal;
 }
-
+/* body */
 body {
 
   button {
@@ -373,14 +373,11 @@ body {
         }
 
         i:nth-of-type(1) {
-          // transform: translate(7px, 9.5px) rotate(60deg);
-          // transform: matrix(-0.71, -0.71, -0.71, 0.71, 0, 0);
-          transform: rotate(45deg);
+          transform: rotate(-45deg);
         }
 
         i:nth-of-type(3) {
-          // transform: translate(7px, -9.5px) rotate(-60deg);
-          transform: rotate(-45deg);
+          transform: rotate(45deg);
         }
       }
 
@@ -722,25 +719,50 @@ body {
     background   : rgba(21, 30, 53, 0.5);
   }
 
-
   #menuModal {
     >div {
       position  : absolute;
       top       : 0;
       left      : -100%;
       width     : 100%;
-      padding   : 20px 0 75px;
       transition: all .2s;
       z-index   : 99999;
-      background: url(../img/libra_nav.png) center center no-repeat, #1C3A87;
+      background: url(../img/libra_nav.png) center 5% no-repeat, #1C3A87;
 
       >div {
+        padding: 90px 20% 10% 15%;
+        font-family: $gilroyRegular;
 
-        max-width: 80%;
-
-        ul li {
+        ul li a {
+          display: inline-block;
+          font-size: 20px;
+          padding: 12px 22px;
+          border: 1px solid transparent;
+          border-radius: 25px;
           color: white;
+
         }
+        ul {
+          padding-bottom: 30px;
+
+          li a:hover {
+            border-color: $hoverColor;
+          }
+        }    
+          .menumodal__call {
+            padding-top: 30px;
+            border-top: 1px solid #425483;
+            
+            a {
+              font-size: 14px;
+              color: white;
+            }
+            p {
+              font-size: 12px;
+              line-height: 24px;
+              color: $iconColor;
+            }
+          }
 
 
       }
@@ -753,15 +775,51 @@ body {
 
   }
 
+  #contactModal {
+    >div {
+      width     : 570px;
+      margin    : 5% auto;
+      z-index   : 99999;
+      // background: url(../img/libra_nav.png) center 5% no-repeat, #1C3A87;
+      // background: linear-gradient(rgba(42,81,166, 0.19), rgba(9,20,46, 0.19)), url(../img/bg_modal.png) center center no-repeat;
+      background:  url(../img/bg_modal.png) center center no-repeat,  url(../img/bg_modal_01.png) center center no-repeat;
+      // background: linear-gradient(180deg, #2C54AB 0%, #09132C 100%), url(../img/bg_modal.png) center center no-repeat;
+      background-size: cover;
 
-  #contactModal>div {
-    width     : 560px;
-    margin    : 5% auto;
-    background: var(--white);
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      form {
+        color: white;
+        h2 {
+          margin-bottom: 20px;
+        }
+        p {
+          font-family: $gilroyRegular;
+          font-size: 30px;
+          margin-bottom: 30px;
+        }
+        input::placeholder {
+          font-family: $gilroyRegular;
+          font-size: 16px;
+          color: $iconColor;
+          background: url(../img/tel.png) center center no-repeat;
+        }
+      }
+
+      >div {
+        padding: 90px 20% 10% 15%;
+        font-family: $gilroyRegular;
+      }
+    }
   }
-
-
 }
+body.active {
+  overflow: hidden;
+}
+
 
 
 
@@ -1019,6 +1077,10 @@ body {
         width: 47%;
       }
 
+    }
+
+    #menuModal>div>div {
+      padding: 90px 5% 60% 10%;
     }
   }
 }
