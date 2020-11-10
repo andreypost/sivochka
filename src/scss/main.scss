@@ -635,7 +635,7 @@ body {
             svg {
               width : 32px;
               height: 30px;
-              margin: 10px auto;
+              margin: 10px 10px 10px 35px;
             }
 
             p {
@@ -1248,6 +1248,9 @@ body.active {
 
       .services .section>div .services__call .services__contract {
         width: 47%;
+        svg {
+          margin: 10px auto;
+        }
       }
     }
 
