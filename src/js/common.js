@@ -54,7 +54,6 @@
         else document.addEventListener("DOMContentLoaded", insertIT);
       };
     files.forEach(file => {
-      console.log(file)
       try {
         let request = new XMLHttpRequest();
         request.open("GET", file, true);
@@ -80,27 +79,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const body = document.querySelector('body')
-
-  window.addEventListener("resize", function () {
-
-  });
-
-  //   const burgerNav = (burger, modal) => {
-  //     const toggle = () => {
-  //       // setTimeout(() => modal.querySelector('div').classList.toggle('active'), 100)
-  //       burger.classList.toggle('active')
-  //       modal.classList.toggle('block')
-  //       modal.querySelector('div').classList.toggle('active')
-  //       body.classList.toggle('active')
-  //     }
-  //     burger.onclick = () => {
-  //       toggle()
-  //     }
-  //     window.addEventListener('click', (e) => {
-  //         if (e.target === modal || e.target.tagName === 'A') toggle()
-  //     })
-  // }
-  // burgerNav(document.querySelector('.header__burger'), document.getElementById('menuModal'))
 
   const burgerNav = (burger, canvas, modal) => {
     const toggle = () => {
