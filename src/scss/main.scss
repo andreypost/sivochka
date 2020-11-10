@@ -599,8 +599,12 @@ body {
           margin-left  : 40px;
           margin-bottom: auto;
 
-          article {
+          article:not(.last) {
             max-width: 55%;
+          }
+
+          .last {
+            max-width: 80%;
           }
 
           li {
@@ -648,6 +652,9 @@ body {
             box-shadow: unset;
           }
         }
+        .services__call.last {
+          margin-bottom: 13%;
+        }
       }
 
       .section>div:last-child {
@@ -657,7 +664,7 @@ body {
       form {
         height         : 100%;
         margin-bottom  : 40px;
-        padding        : 15% 5% 15% 5%;
+        padding        : 10% 5% 15% 5%;
         background     : url(../img/form_bg.jpg) center center no-repeat;
         background-size: cover;
         color          : white;
