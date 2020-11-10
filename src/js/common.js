@@ -71,7 +71,7 @@
       } catch (e) { }
     })
   } else {
-    load("/img/symbol_sprite.html", document.querySelector("body"));
+    load("/img/svg/symbol_sprite.html", document.querySelector("body"));
   }
 
 })(window, document);
