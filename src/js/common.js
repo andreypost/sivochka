@@ -31,7 +31,7 @@
     location.hostname !== "127.0.0.1" &&
     location.host !== ""
   ) {
-    var files = ["/img/symbol_sprite.html", "/img/svg/*"],
+    var files = ["/img/svg/symbol_sprite.html", "/img/svg/*"],
       // var files = ["/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
       revision = 9;
 
