@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector('body')
 
   const burgerNav = (burger, canvas, modal) => {
+    let touchLength = 0
     const toggle = () => {
       burger.classList.toggle('active')
       canvas.classList.toggle('block')
@@ -89,6 +90,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     burger.onclick = () => {
       toggle()
+    }
+    modal.ontouchstart = (e) => {
+      touchLength = e.touches[0].clientX
+    }
+    modal.ontouchend = (e) => {
+      if (touchLength > (e.changedTouches[0].clientX + 60)) {
+        toggle()
+      }
     }
     window.addEventListener('click', (e) => {
       if (e.target === canvas || e.target.tagName === 'A') toggle()
