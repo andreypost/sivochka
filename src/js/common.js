@@ -1,14 +1,14 @@
 (function (window, document) {
   "use strict";
 
-  const retrieveURL = function(filename) {
+  const retrieveURL = function (filename) {
     let scripts = document.getElementsByTagName('script');
     if (scripts && scripts.length > 0) {
-        for (let i in scripts) {
-            if (scripts[i].src && scripts[i].src.match(new RegExp(filename+'\\.js$'))) {
-                return scripts[i].src.replace(new RegExp('(.*)'+filename+'\\.js$'), '$1');
-            }
+      for (let i in scripts) {
+        if (scripts[i].src && scripts[i].src.match(new RegExp(filename + '\\.js$'))) {
+          return scripts[i].src.replace(new RegExp('(.*)' + filename + '\\.js$'), '$1');
         }
+      }
     }
   };
 
@@ -32,7 +32,7 @@
     location.host !== ""
   ) {
     var files = ["/img/symbol_sprite.html", "/img/svg/*"],
-    // var files = ["/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
+      // var files = ["/img/symbol_sprite.html", "/wp-content/themes/ukrmeatbest/img/gradient.svg"],
       revision = 9;
 
     if (
@@ -53,8 +53,8 @@
         if (document.body) insertIT();
         else document.addEventListener("DOMContentLoaded", insertIT);
       };
-      files.forEach(file => {
-        console.log(file)
+    files.forEach(file => {
+      console.log(file)
       try {
         let request = new XMLHttpRequest();
         request.open("GET", file, true);
@@ -74,109 +74,101 @@
   } else {
     load("/img/symbol_sprite.html", document.querySelector("body"));
   }
-  
+
 })(window, document);
 
 document.addEventListener("DOMContentLoaded", () => {
 
   const body = document.querySelector('body')
 
-  window.addEventListener("resize", function () { 
+  window.addEventListener("resize", function () {
 
   });
-  
-//   const burgerNav = (burger, modal) => {
-//     const toggle = () => {
-//       // setTimeout(() => modal.querySelector('div').classList.toggle('active'), 100)
-//       burger.classList.toggle('active')
-//       modal.classList.toggle('block')
-//       modal.querySelector('div').classList.toggle('active')
-//       body.classList.toggle('active')
-//     }
-//     burger.onclick = () => {
-//       toggle()
-//     }
-//     window.addEventListener('click', (e) => {
-//         if (e.target === modal || e.target.tagName === 'A') toggle()
-//     })
-// }
-// burgerNav(document.querySelector('.header__burger'), document.getElementById('menuModal'))
 
-const burgerNav = (burger, canvas, modal) => {
-  const toggle = () => {
-    burger.classList.toggle('active')
-    canvas.classList.toggle('block')
-    modal.classList.toggle('active')
-    body.classList.toggle('active')
-  }
-  burger.onclick = () => {
-    toggle()
-  }
-  window.addEventListener('click', (e) => {
-      if (e.target === canvas || e.target.tagName === 'A') toggle()
-  })
-}
-burgerNav(document.querySelector('.header__burger'), document.querySelector('.canvas'), document.getElementById('menuModal'))
+  //   const burgerNav = (burger, modal) => {
+  //     const toggle = () => {
+  //       // setTimeout(() => modal.querySelector('div').classList.toggle('active'), 100)
+  //       burger.classList.toggle('active')
+  //       modal.classList.toggle('block')
+  //       modal.querySelector('div').classList.toggle('active')
+  //       body.classList.toggle('active')
+  //     }
+  //     burger.onclick = () => {
+  //       toggle()
+  //     }
+  //     window.addEventListener('click', (e) => {
+  //         if (e.target === modal || e.target.tagName === 'A') toggle()
+  //     })
+  // }
+  // burgerNav(document.querySelector('.header__burger'), document.getElementById('menuModal'))
 
-const showModal = (modal) => {
-  const hideModal = (modal) => {
-    modal.style.display = 'none'
-    body.style.overflowY = ''
-    body.style.paddingRight = `${0}px`
-  }
-  let width = document.documentElement.clientWidth
-  body.style.overflowY = 'hidden'
-  body.style.paddingRight = `${document.documentElement.clientWidth - width}px`
-  modal.style.display = 'block'
-  modal.onclick = (e) => {
-    console.log(e.target)
-      if (e.target.classList.contains('close')) hideModal(modal)
-  }
-  document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') hideModal(modal)
-  })
-  window.addEventListener('click', (e) => {
-      // if (e.target === modal) hideModal(modal)
-  })
-}
-
-const modalForm = (buttons, modal) => {
-  buttons.forEach((butt) => {
-    butt.onclick = (e) => {
-      showModal(modal)
+  const burgerNav = (burger, canvas, modal) => {
+    const toggle = () => {
+      burger.classList.toggle('active')
+      canvas.classList.toggle('block')
+      modal.classList.toggle('active')
+      body.classList.toggle('active')
     }
-  })
-}
-modalForm(document.querySelectorAll('.callContact'), document.getElementById('contactModal'))
+    burger.onclick = () => {
+      toggle()
+    }
+    window.addEventListener('click', (e) => {
+      if (e.target === canvas || e.target.tagName === 'A') toggle()
+    })
+  }
+  burgerNav(document.querySelector('.header__burger'), document.querySelector('.canvas'), document.getElementById('menuModal'))
+
+  const showModal = (modal) => {
+    const hideModal = (modal) => {
+      modal.style.display = 'none'
+      body.style.overflowY = ''
+      body.style.paddingRight = `${0}px`
+    }
+    let width = document.documentElement.clientWidth
+    body.style.overflowY = 'hidden'
+    body.style.paddingRight = `${document.documentElement.clientWidth - width}px`
+    modal.style.display = 'block'
+    modal.onclick = (e) => {
+      if (e.target.classList.contains('close')) hideModal(modal)
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') hideModal(modal)
+    })
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) hideModal(modal)
+    })
+  }
+
+  const modalForm = (buttons, modal) => {
+    buttons.forEach((butt) => {
+      butt.onclick = (e) => {
+        showModal(modal)
+      }
+    })
+  }
+  modalForm(document.querySelectorAll('.callContact'), document.getElementById('contactModal'))
 
   $(".slider").slick({
- 
     // normal options...
+    slidesToShow: 5,
     infinite: false,
-   
-    // the magic
+    arrows: true,
     responsive: [{
-   
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          infinite: true
-        }
-   
-      }, {
-   
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          dots: true
-        }
-   
-      }, {
-   
-        breakpoint: 300,
-        settings: "unslick" // destroys slick
-   
-      }]
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+      }
+    }, {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 2,
+      }
+    }, {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+      }
+    }]
   });
 });
 
@@ -190,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const body = document.querySelector("body");
   (/iP(hone|od|ad)/.test(navigator.platform)) && document.querySelector('html').classList.add('ios');
   let preHeaderHeight = document.querySelector('.pre-header').clientHeight;
-  window.addEventListener("resize", function () { 
+  window.addEventListener("resize", function () {
     preHeaderHeight = document.querySelector('.pre-header').clientHeight;
   });
   body.classList.add('siteloaded');
@@ -200,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
   galleryLinks.forEach(link => {
     link.href = supWebp ? link.querySelector('picture source[type="image/webp"]').getAttribute('data-srcset') : link.querySelector('picture source[type="image/jpg"]').getAttribute('data-srcset');
   })
-  
+
   function parallax() {
     const parallaxBg = document.querySelector(".parallax");
     const parallaxBgTop = parallaxBg.getBoundingClientRect().top;
@@ -214,13 +206,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  
+
   function onScroll(){
     var sections = document.querySelectorAll('a[data-element="anchor"]:not(.btn)');
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-    
+
     sections.forEach(section => {
-      var currLink = section; 
+      var currLink = section;
       var val = currLink.getAttribute('href');
       var refElement = document.querySelector(val);
         if (refElement.offsetTop - STICKY_HEIGHT <= scrollPos && ( refElement.offsetTop + refElement.offsetHeight - STICKY_HEIGHT > scrollPos)){
@@ -239,12 +231,12 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     const start = window.pageYOffset;
     const startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-  
+
     const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
     const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
     const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-  
+
     if ('requestAnimationFrame' in window === false) {
       window.scroll(0, destinationOffsetToScroll);
       if (callback) {
@@ -252,20 +244,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       return;
     }
-  
+
     function scroll() {
       const now = 'now' in window.performance ? performance.now() : new Date().getTime();
       const time = Math.min(1, ((now - startTime) / duration));
       const timeFunction = easings[easing](time);
       window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
-  
+
       if (window.pageYOffset === destinationOffsetToScroll) {
         if (callback) {
           callback();
         }
         return;
       }
-  
+
       requestAnimationFrame(scroll);
     }
     scroll();
@@ -283,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       });
   })
-  
+
 
   const h = document.querySelector("header");
   let stuck = false;
@@ -315,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", function () {
     onScroll();
     parallax();
-    stickyHeader();    
+    stickyHeader();
   });
 
   lightGallery(document.querySelector(".documents .gallery__wrapper"), {
@@ -331,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // mobile menu
   const toggle = document.querySelector(".mobile-menu__toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
-  
+
   const mobileMenuOverlay = document.querySelector(".mobile-overlay");
   const mobileMenuItem = document.querySelectorAll(".mobile-menu__item");
 
@@ -352,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('submit', e => {
     const form = e.target;
     const statusFailure = form.querySelector('.status-failure');
-  
+
     fetch(form.action, {
         method: form.method,
         body: new FormData(form)
