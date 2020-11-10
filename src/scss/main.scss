@@ -445,7 +445,7 @@ body {
           margin-bottom: 20px;
 
           li {
-            padding: 4px 4px 4px 0;
+            padding: 8px 4px 8px 0;
           }
         }
 
@@ -777,6 +777,10 @@ body {
         font-size  : 14px;
         line-height: 24px;
       }
+      a:focus {
+        border: none;
+        outline: 0;
+      }
     }
 
     >p {
@@ -815,15 +819,23 @@ body {
       padding    : 90px 20% 10% 15%;
       font-family: $gilroyRegular;
 
-      ul li a {
-        display      : inline-block;
-        font-size    : 20px;
-        padding      : 12px 22px;
-        border       : 1px solid transparent;
-        border-radius: 25px;
-        color        : white;
+      ul li {
 
+        a {
+          display      : inline-block;
+          font-size    : 20px;
+          padding      : 12px 22px;
+          border       : 1px solid transparent;
+          border-radius: 25px;
+          color        : white;   
+        }
+        a:focus {
+          border: none;
+          outline: 0;
+        }
       }
+
+
 
       ul {
         padding-bottom: 30px;
@@ -1204,9 +1216,18 @@ body.active {
       }
 
       .call__buttons {
-        // margin: 0 auto;
+        transform: translate(-50%, 0);
+        // display: block;
+        // margin-left: auto !important;
+        // margin-right: auto !important;
         // width : 260px;
+        button {
+          // right: 0;
+          // margin-left: auto !important;
+          // margin-right: auto !important;
+        }
       }
+
     }
 
     main {
