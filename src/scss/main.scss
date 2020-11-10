@@ -431,7 +431,8 @@ body {
     }
 
     #about {
-      padding-top: 80px;
+      padding-bottom: 40px;
+      padding-top: 40px;
 
       >article {
         max-width: 500px;
@@ -460,7 +461,7 @@ body {
       }
 
       img {
-        width : 50%;
+        width : 47%;
         height: 680px;
       }
     }
@@ -477,15 +478,12 @@ body {
       img,
       h2,
       p {
+        font-family: $gilroyLight;
         margin-bottom: 20px;
 
         span {
           font-weight: bold;
         }
-      }
-
-      p {
-        font-family: $gilroyMedium;
       }
     }
 
@@ -525,6 +523,9 @@ body {
         padding      : 0 55px;
 
         .slick-slide {
+          .slick-initialized .slick-slide {
+            outline: none;
+          }
 
           img {
             margin: auto;
@@ -653,7 +654,7 @@ body {
           }
         }
         .services__call.last {
-          margin-bottom: 13%;
+          margin-bottom: 18%;
         }
       }
 
@@ -664,7 +665,7 @@ body {
       form {
         height         : 100%;
         margin-bottom  : 40px;
-        padding        : 10% 5% 15% 5%;
+        padding        : 10% 5% 20% 5%;
         background     : url(../img/form_bg.jpg) center center no-repeat;
         background-size: cover;
         color          : white;
@@ -1115,7 +1116,9 @@ body.active {
       }
 
       #about {
-        padding-top: 20px;
+        >article .round__list li {
+          padding: 4px 0;
+        }
       }
 
       .career {
