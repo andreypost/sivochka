@@ -60,7 +60,8 @@ blockquote:before {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: normal;
 }
 
@@ -253,7 +254,7 @@ a:hover {
   max-width   : 15px;
   min-width   : 15px;
   height      : 15px;
-  margin-right: 15px;
+  margin-right: 16px;
   fill        : none;
 }
 
@@ -438,19 +439,20 @@ body {
       padding-bottom: 82px;
 
       >article {
-        width: 100%;
+        width       : 100%;
         margin-right: 40px;
 
         h2 {
           line-height  : 125px;
           margin-bottom: 22px;
         }
+
         .about__lists {
           margin-bottom: 38px;
 
           .round__list {
             max-width: 255px;
-            
+
             li {
               padding: 8px 0;
             }
@@ -458,19 +460,19 @@ body {
         }
 
         .about__quote {
-          
+
           blockquote {
             max-width: 405px;
-            padding: 6% 6% 6% 12%;
+            padding  : 6% 6% 6% 12%;
           }
         }
       }
     }
 
     .career {
-      padding-top: 74px;
-      padding-bottom   : 88px;
-      background: $lineColor;
+      padding-top   : 74px;
+      padding-bottom: 88px;
+      background    : $lineColor;
 
       img {
         margin-left : -35%;
@@ -486,7 +488,7 @@ body {
         p {
           font-family  : $gilroyLight;
           margin-bottom: 30px;
-          
+
           span {
             font-weight: bold;
           }
@@ -508,16 +510,18 @@ body {
         }
 
         blockquote {
-          max-width    : 85%;
-          padding      : 10% 5% 2%;
+          max-width: 85%;
+          padding  : 10% 5% 2%;
 
           p {
             margin-bottom: 30px;
           }
         }
+
         blockquote::before {
           top: 55px;
         }
+
         blockquote::after {
           right: 115px;
         }
@@ -556,6 +560,7 @@ body {
           svg {
             width : 60px;
             height: 60px;
+            fill  : $iconColor;
           }
 
           h5 {
@@ -597,13 +602,6 @@ body {
         padding      : 20px 0;
       }
 
-      h3 {
-        margin-top   : 60px;
-        margin-bottom: 20px;
-        font-size    : 30px;
-        font-family  : $gilroyRegular;
-      }
-
       .section>div {
         flex       : 1 50%;
         display    : flex;
@@ -611,27 +609,41 @@ body {
         border-left: 2px solid $lineColor;
 
         .services__list {
-          margin-left  : 40px;
+          margin-left  : 30px;
           margin-bottom: auto;
 
-          article:not(.last) {
-            max-width: 55%;
+          h3 {
+            max-width    : 75%;
+            margin-top   : 50px;
+            margin-bottom: 20px;
+            font-size    : 30px;
+            font-family  : $gilroyRegular;
+          }
+
+          .round__list {
+            max-width: 57%;
           }
 
           .last {
-            max-width: 80%;
+            max-width: 95%;
           }
 
-          li {
-            padding: 4px 0;
+          .round__list {
+            svg {
+              margin-right: 21px;
+            }
+
+            li {
+              padding: 8px 0;
+            }
           }
 
           img {
             position: absolute;
             top     : 0;
             right   : 0;
-            width   : 287px;
-            height  : 376px;
+            bottom  : 0;
+            margin  : auto;
             z-index : -99;
           }
 
@@ -650,7 +662,8 @@ body {
             svg {
               width : 32px;
               height: 30px;
-              margin: 10px 10px 10px 35px;
+              margin: 10px 10px 10px 40px;
+              fill  : $mainColor;
             }
 
             p {
@@ -660,7 +673,7 @@ body {
           }
 
           button {
-            width     : 48%;
+            width     : 50%;
             height    : 50px;
             left      : unset;
             right     : 10px;
@@ -680,7 +693,7 @@ body {
       form {
         height         : 100%;
         margin-bottom  : 40px;
-        padding        : 10% 5% 20% 5%;
+        padding        : 62px 49px 118px;
         background     : url(../img/form_bg.jpg) center center no-repeat;
         background-size: cover;
         color          : white;
@@ -704,10 +717,10 @@ body {
         }
 
         input {
-          width        : 65%;
+          width        : 385px;
           height       : 52px;
           margin-bottom: 20px;
-          padding-left : 13%;
+          padding-left : 75px;
           border       : 1px solid #FFFFFF;
           border-radius: 25px;
           font-family  : $gilroySemiBold;
@@ -972,6 +985,12 @@ body.active {
   overflow: hidden;
 }
 
+@media screen and (max-width: 1100px) {
+  body main .sertificate .sertificate__top h2 {
+    font-size: 60px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .none1024 {
     display: none;
@@ -1022,10 +1041,11 @@ body.active {
 
           .about__lists {
             margin-bottom: 10px;
+
             .round__list {
               max-width: unset;
+            }
           }
-        }
 
           .about__quote {
             position: absolute;
@@ -1049,15 +1069,15 @@ body.active {
       .career {
 
         >div {
-         
+
           img {
-            position: absolute;
-            left: 0;
-            right: 0;
+            position    : absolute;
+            left        : 0;
+            right       : 0;
             width       : 100%;
             margin-left : auto;
             margin-right: auto;
-            opacity: .2;
+            opacity     : .2;
           }
         }
       }
@@ -1086,7 +1106,7 @@ body.active {
           }
 
           blockquote {
-            max-width: 100%;
+            max-width    : 100%;
             margin-bottom: 20px;
           }
         }
@@ -1096,14 +1116,15 @@ body.active {
 
         >div:first-child {
           border-right: 2px solid $lineColor;
+
+          .services__call.last {
+            margin-bottom: 50px;
+          }
+
         }
 
         >div:last-child {
           border-top: 2px solid $lineColor;
-        }
-
-        >div .services__list article {
-          max-width: 100%;
         }
 
         .services__list img {
@@ -1158,16 +1179,19 @@ body.active {
 
       #about {
         padding-top: unset;
+
         >article {
           h2 {
             margin-bottom: unset;
           }
+
           .about__lists {
 
             .round__list li {
               padding: 4px 0;
             }
           }
+
           blockquote::before {
             top : 30px;
             left: 10px;
@@ -1177,21 +1201,25 @@ body.active {
 
       .career {
         padding: 40px 0;
-
-        >div {
-
-        }
       }
 
       .sertificate {
         .sertificate__top {
+          h2 {
+            font-size: 40px;
+          }
           img {
             height: 400px;
           }
+
           blockquote::before {
             top : 30px;
             left: 10px;
           }
+        }
+
+        .slider {
+          margin-bottom: 45px;
         }
 
         .sertificate__icons {
@@ -1216,15 +1244,32 @@ body.active {
       }
 
       .services {
+        .section>div {
+          .services__list {
+            h3 {
+              max-width: 95%;
+              font-size: 24px;
+            }
+
+            .round__list {
+              max-width: 95%;
+
+              svg {
+                margin-right: 21px;
+              }
+
+              li {
+                padding: 4px 0;
+              }
+            }
+          }
+        }
+
         form {
-          padding: 30px 5% 70px;
+          padding: 30px 20px 90px;
 
           p {
             font-size: 20px;
-          }
-
-          input {
-            width: 85%;
           }
 
           .call__buttons {
@@ -1284,7 +1329,7 @@ body.active {
       }
 
       .call__buttons {
-        transform: translate(-50%, 0);
+        // transform: translate(-50%, 0);
 
         // display: block;
         // margin-left: auto !important;
@@ -1311,11 +1356,26 @@ body.active {
         }
       }
 
-      .services .section>div .services__call .services__contract {
-        width: 47%;
+      .services .section>div {
+        .services__list {
+          img {
+            left: 0;
+          }
+        }
 
-        svg {
-          margin: 10px auto;
+        .services__call .services__contract {
+          padding-right: 10px;
+
+          svg {
+            margin: 10px auto;
+          }
+        }
+        form {
+
+          input {
+            width: 72%;
+          }
+
         }
       }
     }
