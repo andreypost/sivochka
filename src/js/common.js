@@ -100,8 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle()
       }
     }
+    modal.onclick = (e) => {
+      if (e.target.tagName === 'A') toggle()
+    }
     window.addEventListener('click', (e) => {
-      if (e.target === canvas || e.target.tagName === 'A') toggle()
+      if (e.target === canvas) toggle()
     })
   }
   burgerNav(document.querySelector('.header__burger'), document.querySelector('.canvas'), document.getElementById('menuModal'))
@@ -142,12 +145,17 @@ document.addEventListener("DOMContentLoaded", () => {
     infinite: false,
     arrows: true,
     responsive: [{
-      breakpoint: 1024,
+      breakpoint: 1100,
       settings: {
         slidesToShow: 4,
       }
     }, {
-      breakpoint: 800,
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 3,
+      }
+    }, {
+      breakpoint: 700,
       settings: {
         slidesToShow: 2,
       }

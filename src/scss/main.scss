@@ -218,12 +218,15 @@ button,
 
 .insta,
 .facebook {
-  width      : 35px;
-  height     : 35px;
+  width     : 35px;
+  height    : 35px;
+  fill      : none;
+  stroke    : white;
+  transition: stroke .2s ease-in-out;
+}
+
+.facebook {
   margin-left: 15px;
-  fill       : none;
-  stroke     : white;
-  transition : stroke .2s ease-in-out;
 }
 
 .insta:hover,
@@ -302,8 +305,8 @@ body {
       .header__burger {
         width       : 45px;
         height      : 49px;
-        margin-right: auto;
         z-index     : 9999;
+        margin-right: 4%;
 
         i {
           position     : absolute;
@@ -388,9 +391,9 @@ body {
     }
 
     .call__buttons {
-      display          : inline-block;
-      margin-top       : 60px;
-      margin-bottom    : 170px;
+      display      : inline-block;
+      margin-top   : 60px;
+      margin-bottom: 170px;
 
       button {
         width: 260px;
@@ -431,43 +434,42 @@ body {
     }
 
     #about {
-      padding-bottom: 40px;
-      padding-top: 40px;
+      padding-top   : 82px;
+      padding-bottom: 82px;
 
       >article {
-        max-width: 500px;
+        width: 100%;
+        margin-right: 40px;
 
         h2 {
-          margin-bottom: 30px;
+          line-height  : 125px;
+          margin-bottom: 22px;
         }
+        .about__lists {
+          margin-bottom: 38px;
 
-        .round__list {
-          width        : 100%;
-          margin-bottom: 20px;
-
-          li {
-            padding: 8px 4px 8px 0;
+          .round__list {
+            max-width: 255px;
+            
+            li {
+              padding: 8px 0;
+            }
           }
         }
 
         .about__quote {
-          margin-top   : 20px;
-          margin-bottom: 60px;
-
+          
           blockquote {
+            max-width: 405px;
             padding: 6% 6% 6% 12%;
           }
         }
       }
-
-      img {
-        width : 47%;
-        height: 680px;
-      }
     }
 
     .career {
-      padding   : 80px 0;
+      padding-top: 74px;
+      padding-bottom   : 88px;
       background: $lineColor;
 
       img {
@@ -475,27 +477,30 @@ body {
         margin-right: 80px;
       }
 
-      img,
-      h2,
-      p {
-        font-family: $gilroyLight;
-        margin-bottom: 20px;
+      article {
 
-        span {
-          font-weight: bold;
+        h2 {
+          margin-bottom: 38px;
+        }
+
+        p {
+          font-family  : $gilroyLight;
+          margin-bottom: 30px;
+          
+          span {
+            font-weight: bold;
+          }
         }
       }
     }
 
     .sertificate {
-      padding   : 80px 0 90px;
+      padding   : 82px 0 90px;
       background: linear-gradient(180deg, rgba(239, 242, 250, 0) 0%, #EFF2FA 100%);
 
       .sertificate__top {
         img {
-          min-width   : 40%;
-          height      : 600px;
-          margin-right: 20px;
+          margin-right: 68px;
         }
 
         h2 {
@@ -503,15 +508,16 @@ body {
         }
 
         blockquote {
-          max-width    : 80%;
-          margin-bottom: 20px;
-          padding      : 10% 5% 5%;
+          max-width    : 85%;
+          padding      : 10% 5% 2%;
 
           p {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
           }
         }
-
+        blockquote::before {
+          top: 55px;
+        }
         blockquote::after {
           right: 115px;
         }
@@ -519,16 +525,12 @@ body {
 
       .slider {
         margin-top   : 40px;
-        margin-bottom: 40px;
+        margin-bottom: 65px;
         padding      : 0 55px;
 
         .slick-slide {
           .slick-initialized .slick-slide {
             outline: none;
-          }
-
-          img {
-            margin: auto;
           }
         }
 
@@ -561,20 +563,20 @@ body {
             font-size     : 18px;
             margin        : 10px auto;
             padding-bottom: 10px;
-            position: relative;
+            position      : relative;
           }
 
           h5::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 1px;
-            width: 48px;
-            margin-left: auto;
+            content     : '';
+            position    : absolute;
+            left        : 0;
+            right       : 0;
+            bottom      : 0;
+            height      : 1px;
+            width       : 48px;
+            margin-left : auto;
             margin-right: auto;
-            background: $iconColor;
+            background  : $iconColor;
           }
 
           p {
@@ -665,6 +667,7 @@ body {
             box-shadow: unset;
           }
         }
+
         .services__call.last {
           margin-bottom: 18%;
         }
@@ -797,6 +800,7 @@ body {
         font-size  : 14px;
         line-height: 24px;
       }
+
       a:focus {
         outline: 0;
       }
@@ -846,8 +850,9 @@ body {
           padding      : 12px 22px;
           border       : 1px solid transparent;
           border-radius: 25px;
-          color        : white;   
+          color        : white;
         }
+
         a:focus {
           outline: 0;
         }
@@ -887,7 +892,7 @@ body {
 
   #contactModal {
     background: rgba(21, 30, 53, .1);
-    z-index: 9999;
+    z-index   : 9999;
 
     >div {
       width          : 560px;
@@ -980,6 +985,10 @@ body.active {
     flex-flow: column;
   }
 
+  .justcenter1024 {
+    justify-content: center;
+  }
+
   body {
 
     header {
@@ -990,6 +999,7 @@ body.active {
         border-bottom : 1px solid #425483;
 
         li:nth-child(8) {
+          margin-left : auto;
           margin-right: auto;
         }
       }
@@ -1004,14 +1014,18 @@ body.active {
       #about {
 
         >img {
-          max-width : 100%;
-          min-width : 100%;
-          max-height: 100%;
-          min-height: 100%;
+          margin: 0 auto;
         }
 
         >article {
-          max-width: 100%;
+          margin: 0 auto;
+
+          .about__lists {
+            margin-bottom: 10px;
+            .round__list {
+              max-width: unset;
+          }
+        }
 
           .about__quote {
             position: absolute;
@@ -1032,6 +1046,23 @@ body.active {
 
       }
 
+      .career {
+
+        >div {
+         
+          img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width       : 100%;
+            margin-left : auto;
+            margin-right: auto;
+            opacity: .2;
+          }
+        }
+      }
+
+
       .sertificate {
         padding: 20px 0;
 
@@ -1040,7 +1071,6 @@ body.active {
           >img,
           >article {
             order: 2;
-            width: 100%;
           }
 
           >img {
@@ -1055,10 +1085,10 @@ body.active {
             order: 3;
           }
 
-        }
-
-        blockquote {
-          max-width: 100%;
+          blockquote {
+            max-width: 100%;
+            margin-bottom: 20px;
+          }
         }
       }
 
@@ -1093,6 +1123,10 @@ body.active {
     flex-flow: column;
   }
 
+  .justcenter768 {
+    justify-content: center;
+  }
+
   h2 {
     font-size  : 40px;
     line-height: 48px;
@@ -1122,24 +1156,30 @@ body.active {
         line-height: 16px;
       }
 
-      blockquote::before {
-        top : 30px;
-        left: 10px;
-      }
-
       #about {
-        >article .round__list li {
-          padding: 4px 0;
+        padding-top: unset;
+        >article {
+          h2 {
+            margin-bottom: unset;
+          }
+          .about__lists {
+
+            .round__list li {
+              padding: 4px 0;
+            }
+          }
+          blockquote::before {
+            top : 30px;
+            left: 10px;
+          }
         }
       }
 
       .career {
         padding: 40px 0;
 
-        img {
-          margin-left : -35%;
-          margin-right: unset;
-          width       : 100%;
+        >div {
+
         }
       }
 
@@ -1147,6 +1187,10 @@ body.active {
         .sertificate__top {
           img {
             height: 400px;
+          }
+          blockquote::before {
+            top : 30px;
+            left: 10px;
           }
         }
 
@@ -1195,6 +1239,10 @@ body.active {
         padding-top  : 20px;
         margin-bottom: 20px;
 
+        li {
+          margin: 5px 0;
+        }
+
         .facebook,
         .insta {
           margin: 20px;
@@ -1237,6 +1285,7 @@ body.active {
 
       .call__buttons {
         transform: translate(-50%, 0);
+
         // display: block;
         // margin-left: auto !important;
         // margin-right: auto !important;
@@ -1253,7 +1302,8 @@ body.active {
     main {
       #about {
         >img {
-          height: 100%;
+          max-width: 90%;
+          min-width: 90%;
         }
 
         p {
@@ -1263,6 +1313,7 @@ body.active {
 
       .services .section>div .services__call .services__contract {
         width: 47%;
+
         svg {
           margin: 10px auto;
         }
