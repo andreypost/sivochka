@@ -166,6 +166,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }]
   });
+  const showCertificate = (imgs) => {
+    imgs.forEach((img) => {
+      img.onclick = () => {
+        document.querySelector('.sertificate__top img').src = img.src.replace(/-2/, '-1')
+      }
+    })
+  }
+  showCertificate(document.querySelectorAll('.slick-slide img'))
 });
 
 
