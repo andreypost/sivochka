@@ -966,7 +966,8 @@ body {
           color      : $iconColor;
         }
 
-        input:focus+svg {
+        input:focus+svg,
+        input:valid+svg {
           stroke      : white;
           stroke-width: 2px;
         }
