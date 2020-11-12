@@ -62,10 +62,10 @@
                 <blockquote class="relative"> Предоставляю клиентам качественные услуги, связанные с недвижимостью,
                     бизнесом и законностью. Знаю, что самое ценное в жизни — это время, поэтому решаю задачи быстро.
                 </blockquote>
-                <span class="callContact relative call__buttons">
+                <div class="callContact relative call__buttons">
                     <button>Связаться</button>
                     <button>Связаться</button>
-                </span>
+                </div>
             </div>
         </div>
     </header>
@@ -677,13 +677,13 @@
                         <h2>ЗАПОЛНИТЕ <br> ФОРМУ</h2>
                         <p>я скоро свяжусь с вами!</p>
                         <div class="relative">
-                            <input type="text" name="" id="" required="" placeholder="Имя">
+                            <input type="text" name="" id="" required="" placeholder="Имя" pattern=".{2,}">
                             <svg class="person">
                                 <use xlink:href="#icon-person"></use>
                             </svg>
                         </div>
                         <div class="relative">
-                            <input type="tel" name="" id="" required="" placeholder="Телефон">
+                            <input type="tel" name="" id="" required="" placeholder="Телефон" pattern="[0-9]{10}">
                             <svg class="call">
                                 <use xlink:href="#icon-call"></use>
                             </svg>
