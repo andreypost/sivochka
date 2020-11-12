@@ -811,19 +811,19 @@
         </div>
     </div>
     <div id="contactModal" class="none">
-        <div>
+        <div class="relative">
             <i class="close"></i>
             <form action="/auth/login/" id="contactModalForm" class="relative" method="post">
                 <h2>ЗАПОЛНИТЕ <br> ФОРМУ</h2>
-                <p>Я СКОРО СВЯЖУСЬ С ВАМИ!</p>
+                <p>я скоро свяжусь с вами!</p>
                 <div class="relative">
-                    <input type="text" name="" id="" required="" placeholder="Имя">
+                    <input type="text" name="" id="" required="" placeholder="Имя" pattern=".{2,}">
                     <svg class="person">
                         <use xlink:href="#icon-person"></use>
                     </svg>
                 </div>
                 <div class="relative">
-                    <input type="tel" name="" id="" required="" placeholder="Телефон">
+                    <input type="tel" name="" id="" required="" placeholder="Телефон" pattern="[0-9]{10}">
                     <svg class="call">
                         <use xlink:href="#icon-call"></use>
                     </svg>

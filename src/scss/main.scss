@@ -912,27 +912,27 @@ body {
       width          : 560px;
       margin         : 2% auto 0;
       padding        : 40px 3% 90px;
+      padding        : 62px 49px 118px;
       background     : url(../img/form_bg.jpg) center center no-repeat;
       background-size: cover;
 
       i {
-        display    : block;
-        width      : 40px;
-        height     : 40px;
-        margin-left: auto;
-        background : url(../img/close.png) center center no-repeat;
+        position  : absolute;
+        top       : 28px;
+        right     : 25px;
+        display   : block;
+        width     : 40px;
+        height    : 40px;
+        background: url(../img/close.png) center center no-repeat;
       }
 
       form {
         color: white;
 
-        h2 {
-          margin-bottom: 20px;
-        }
-
         p {
           font-family  : $gilroyRegular;
           font-size    : 30px;
+          margin-top   : 20px;
           margin-bottom: 30px;
         }
 
@@ -948,10 +948,10 @@ body {
         }
 
         input {
-          width        : 65%;
+          width        : 385px;
           height       : 52px;
           margin-bottom: 20px;
-          padding-left : 13%;
+          padding-left : 75px;
           border       : 1px solid #FFFFFF;
           border-radius: 25px;
           font-family  : $gilroySemiBold;
@@ -975,6 +975,8 @@ body {
       }
 
       .call__buttons {
+        margin-top: 20px;
+
         button {
           width: 260px;
         }
@@ -1301,9 +1303,16 @@ body.active {
 
     #contactModal {
       >div {
+        width  : 80%;
+        padding: 30px 20px 90px;
+
         form {
           p {
             font-size: 20px;
+          }
+
+          .call__buttons {
+            margin-top: 10px;
           }
         }
       }
@@ -1375,11 +1384,9 @@ body.active {
         }
 
         form {
-
           input {
             width: 72%;
           }
-
         }
       }
     }
@@ -1390,11 +1397,14 @@ body.active {
 
     #contactModal {
       >div {
-        width: 90%;
+        i {
+          top  : 5px;
+          right: 5px;
+        }
 
         form {
           input {
-            width: 85%;
+            width: 72%;
           }
         }
       }
