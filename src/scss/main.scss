@@ -276,24 +276,27 @@ blockquote:before {
 /* body */
 body {
 
-  .call__buttons button {
-    position        : absolute;
-    left            : 0;
-    top             : 0;
-    height          : 52px;
-    background-image: linear-gradient(270deg, #E9760C 4.09%, #E62B1F 100%);
-    box-shadow      : 0px 14px 6px rgba(21, 30, 53, 0.5);
-    border-radius   : 25px;
-    transition      : opacity .2s ease-in-out;
-  }
+  .call__buttons {
 
-  .call__buttons button:nth-of-type(2) {
-    background: linear-gradient(270deg, #6583D5 4.09%, #1656E0 99.5%);
-    opacity   : 0;
-  }
-
-  .call__buttons button:nth-of-type(2):hover {
-    opacity: 1;
+    button {
+      position        : absolute;
+      left            : 0;
+      top             : 0;
+      height          : 52px;
+      background-image: linear-gradient(270deg, #E9760C 4.09%, #E62B1F 100%);
+      box-shadow      : 0px 14px 6px rgba(21, 30, 53, 0.5);
+      border-radius   : 25px;
+      transition      : opacity .2s ease-in-out;
+    }
+    
+    button:nth-of-type(2) {
+      background: linear-gradient(270deg, #6583D5 4.09%, #1656E0 99.5%);
+      opacity   : 0;
+    }
+    
+    button:nth-of-type(2):hover {
+      opacity: 1;
+    }
   }
 
   header {
