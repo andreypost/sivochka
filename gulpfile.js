@@ -31,7 +31,7 @@ gulp.task("svg-sprite", function () {
       .src("./src/img/svg/*.svg")
       .pipe(
         cheerio({
-          run: function ($) {},
+          run: function ($) { },
           parserOptions: { xmlMode: true },
         })
       )
@@ -89,10 +89,12 @@ gulp.task("image-min", () =>
 gulp.task("compile-sass", function () {
   return gulp
     // .src(["node_modules/bootstrap/dist/css/bootstrap.css", "./src/scss/*.scss"])
-    .src(["node_modules/normalize.css/normalize.css",
-    "node_modules/slick-carousel/slick/slick.css",
-    "node_modules/slick-carousel/slick/slick-theme.css",
-    "./src/scss/*.scss"])
+    .src(
+      //   ["node_modules/normalize.css/normalize.css",
+      // "node_modules/slick-carousel/slick/slick.css",
+      // "node_modules/slick-carousel/slick/slick-theme.css",
+      // "./src/scss/*.scss"]
+      "./src/scss/*.scss")
     .pipe(sass())
     .pipe(concat("style.css"))
     .pipe(gulp.dest("./src/css/"));
@@ -100,7 +102,9 @@ gulp.task("compile-sass", function () {
 
 gulp.task("minify-css", function () {
   return gulp
-    .src([
+    .src(["node_modules/normalize.css/normalize.css",
+      "node_modules/slick-carousel/slick/slick.css",
+      "node_modules/slick-carousel/slick/slick-theme.css",
       "./src/css/*.css",
       // "node_modules/intl-tel-input/build/css/intlTelInput.css",
     ])

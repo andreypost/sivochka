@@ -366,6 +366,10 @@ body {
         border-color: $hoverColor;
       }
 
+      li:nth-child(1)>a {
+        color: $hoverColor;
+      }
+
       p {
         font-size  : 14px;
         line-height: 24px;
