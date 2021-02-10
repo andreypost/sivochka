@@ -1020,6 +1020,13 @@ body.active {
     justify-content: center;
   }
 
+  .pointer,
+button,
+.header__burger,
+.close {
+  cursor: unset;
+}
+
   body {
 
     header {

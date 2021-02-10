@@ -79,36 +79,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const body = document.querySelector('body')
-
-  const burgerNav = (burger, canvas, modal) => {
-    let touchLength = 0
-    const toggle = () => {
-      burger.classList.toggle('active')
-      canvas.classList.toggle('block')
-      modal.classList.toggle('active')
-      body.classList.toggle('active')
-    }
-    burger.onclick = () => {
-      toggle()
-    }
-    modal.ontouchstart = (e) => {
-      touchLength = e.touches[0].clientX
-    }
-    modal.ontouchend = (e) => {
-      if (touchLength > (e.changedTouches[0].clientX + 60)) {
-        toggle()
-      }
-    }
-    modal.onclick = (e) => {
-      if (e.target.tagName === 'A') toggle()
-    }
-    window.addEventListener('click', (e) => {
-      if (e.target === canvas) toggle()
-    })
+  let body = document.querySelector('body'),
+    contactModal = document.getElementById('contactModal'),
+    menuModal = document.getElementById('menuModal'),
+    headerBurger = document.querySelector('.header__burger'),
+    canvas = document.querySelector('.canvas'),
+    touchLength = 0
+  const toggleMenu = () => {
+    headerBurger.classList.toggle('active')
+    canvas.classList.toggle('block')
+    menuModal.classList.toggle('active')
+    body.classList.toggle('active')
   }
-  burgerNav(document.querySelector('.header__burger'), document.querySelector('.canvas'), document.getElementById('menuModal'))
-
   const showModal = (modal) => {
     const hideModal = (modal) => {
       modal.style.display = 'none'
@@ -129,16 +111,30 @@ document.addEventListener("DOMContentLoaded", () => {
       if (e.target == modal) hideModal(modal)
     })
   }
-
-  const modalForm = (buttons, modal) => {
-    buttons.forEach((butt) => {
-      butt.onclick = (e) => {
-        showModal(modal)
-      }
-    })
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.header__burger') || e.target === canvas) {
+      toggleMenu()
+    } else if (e.target.dataset.section) {
+      e.preventDefault()
+      window.scrollBy({
+        top: document.getElementById(`${e.target.dataset.section}`).getBoundingClientRect().top,
+        behavior: 'smooth'
+      })
+      if (e.target.closest('#menuModal')) toggleMenu()
+    } else if (e.target.tagName === 'BUTTON' && !e.target.closest('#contactModalForm') && !e.target.closest('#contactForm') && !e.target.closest('.slick-arrow')) {
+      showModal(contactModal)
+    } else if (e.target.closest('.slick-slide img')) {
+      document.querySelector('.sertificate__top img').src = e.target.src.replace(/-2/, '-1')
+    }
+  })
+  menuModal.ontouchstart = (e) => {
+    touchLength = e.touches[0].clientX
   }
-  modalForm(document.querySelectorAll('.callContact'), document.getElementById('contactModal'))
-
+  menuModal.ontouchend = (e) => {
+    if (touchLength > (e.changedTouches[0].clientX + 60)) {
+      toggleMenu()
+    }
+  }
   $(".slider").slick({
     // normal options...
     slidesToShow: 5,
@@ -166,14 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }]
   });
-  const showCertificate = (imgs) => {
-    imgs.forEach((img) => {
-      img.onclick = () => {
-        document.querySelector('.sertificate__top img').src = img.src.replace(/-2/, '-1')
-      }
-    })
-  }
-  showCertificate(document.querySelectorAll('.slick-slide img'))
 });
 
 
